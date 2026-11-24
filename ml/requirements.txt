@@ -1,0 +1,11 @@
+# Machine Learning & Data Processing Requirements
+pandas>=2.0.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+rasterio>=1.3.0
+pystac-client>=0.8.0
+planetary-computer>=1.0.0
+jupyter>=1.0.0
+ipykernel>=6.29.0

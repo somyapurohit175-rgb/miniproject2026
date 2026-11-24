@@ -1,0 +1,4 @@
+# Core Project Dependencies
+-r backend/requirements.txt
+-r frontend/requirements.txt
+-r ml/requirements.txt
