@@ -1,0 +1,65 @@
+# Python & Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment Variables & Credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Data & Large Archives (>50MB)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+*.zip
+*.tar.gz
+*.tar
+*.7z
+*.rar
+*.gz
+
+# Satellite / Geospatial Rasters
+*.tif
+*.tiff
+*.nc
+*.hdf
+*.h5
+
+# Machine Learning Large Weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.bin
+
+# IDE & OS Metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Frontend builds (if React or Node used)
+node_modules/
+dist/
+build/
+.cache/

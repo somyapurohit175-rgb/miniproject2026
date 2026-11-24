@@ -1,0 +1,3 @@
+# Keep this directory tracked in git.
+# Place raw GLORIA CSVs, zip archives, or raw satellite rasters here.
+# Note: Raw data files are excluded by .gitignore.
