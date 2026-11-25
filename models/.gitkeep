@@ -1,0 +1,2 @@
+# Keep this directory tracked in git.
+# Trained baseline proxy models (chla_proxy.joblib, tss_proxy.joblib) and baseline_metrics.json will be saved here after approval and training.
