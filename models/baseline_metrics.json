@@ -496,5 +496,84 @@
         }
       }
     }
+  },
+  "anomaly_benchmark": {
+    "dataset_files": {
+      "csv": "data/processed/anomaly_benchmark.csv",
+      "npz": "data/processed/anomaly_benchmark.npz",
+      "anomalies_csv": "data/processed/sentinel_anomalies.csv"
+    },
+    "benchmark_size": 64,
+    "normal_cases": 32,
+    "injected_cases": 32,
+    "chronological_split": {
+      "reference_dates_per_lake": 24,
+      "held_out_test_dates_per_lake": 8,
+      "total_reference_observations": 96
+    },
+    "detector_config": {
+      "indicators": [
+        "NDCI_med",
+        "NDTI_med",
+        "NDCI_p90",
+        "NDTI_p90",
+        "pred_chla_proxy",
+        "pred_tss_proxy"
+      ],
+      "trailing_window": 5,
+      "min_history": 3,
+      "threshold": 2.0,
+      "epsilon_formula": "max(base_floor, 0.25 * MAD_lake_ref) where base_floor = 0.02 (indices), 10.0 mg/m^3 (Chla), 15.0 mg/L (TSS)"
+    },
+    "injection_config": {
+      "random_seed": 42,
+      "affected_water_pixel_pct_range": [
+        13.95,
+        21.59
+      ],
+      "scenarios": {
+        "turbidity_sediment": {
+          "count": 16,
+          "band_modified": "B04",
+          "delta_max": 0.095,
+          "radial_weight_range": [
+            0.6,
+            1.0
+          ],
+          "recalculated_indices": [
+            "NDTI",
+            "NDCI"
+          ]
+        },
+        "algal_bloom": {
+          "count": 16,
+          "band_modified": "B05",
+          "delta_max": 0.12,
+          "radial_weight_range": [
+            0.6,
+            1.0
+          ],
+          "recalculated_indices": [
+            "NDCI"
+          ]
+        }
+      }
+    },
+    "metrics": {
+      "precision": 0.6444444444444445,
+      "recall": 0.90625,
+      "f1_score": 0.7532467532467533,
+      "roc_auc": 0.79638671875,
+      "tp": 29,
+      "fp": 16,
+      "tn": 16,
+      "fn": 3
+    },
+    "methodology_limitations": [
+      "Semi-synthetic benchmark evaluates localized simulated plumes only; metrics do not establish real-world pollution detection accuracy.",
+      "Real held-out scenes include natural seasonal shifts that trigger positive anomaly scores under an uncalibrated tabular detector (explaining FP > 0).",
+      "NPZ patches store 9 channels ending with B8A and omit B07; B07_med in injected tabular rows is preserved unchanged from sentinel_timeseries.csv (unaffected by B04/B05 injections).",
+      "Bellandur 64x64 patches retain 30-182 open-water pixels vs native 10m core masks, causing a ~0.02 mean absolute offset between patch and CSV summaries."
+    ]
   }
 }

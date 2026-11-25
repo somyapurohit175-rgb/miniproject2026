@@ -1,0 +1,1908 @@
+{
+  "bellandur": {
+    "2024-06-01": [],
+    "2024-11-08": [],
+    "2025-01-07": [],
+    "2025-01-27": [],
+    "2025-02-06": [
+      {
+        "hotspot_id": "bellandur_2025-02-06_h01",
+        "lat": 12.93877,
+        "lon": 77.676309,
+        "pixel_count": 9,
+        "peak_ndci": 0.48042,
+        "peak_ndti": -0.32377,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3982
+      },
+      {
+        "hotspot_id": "bellandur_2025-02-06_h02",
+        "lat": 12.935882,
+        "lon": 77.676043,
+        "pixel_count": 4,
+        "peak_ndci": 0.45646,
+        "peak_ndti": -0.30466,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3786
+      }
+    ],
+    "2025-02-16": [],
+    "2025-02-26": [],
+    "2025-03-08": [
+      {
+        "hotspot_id": "bellandur_2025-03-08_h01",
+        "lat": 12.932764,
+        "lon": 77.657817,
+        "pixel_count": 4,
+        "peak_ndci": 0.16103,
+        "peak_ndti": -0.15626,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3844
+      }
+    ],
+    "2025-03-15": [],
+    "2025-03-28": [
+      {
+        "hotspot_id": "bellandur_2025-03-28_h01",
+        "lat": 12.935721,
+        "lon": 77.664259,
+        "pixel_count": 17,
+        "peak_ndci": 0.2213,
+        "peak_ndti": -0.12414,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5531
+      },
+      {
+        "hotspot_id": "bellandur_2025-03-28_h02",
+        "lat": 12.935678,
+        "lon": 77.674492,
+        "pixel_count": 16,
+        "peak_ndci": 0.69601,
+        "peak_ndti": -0.38033,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5148
+      },
+      {
+        "hotspot_id": "bellandur_2025-03-28_h03",
+        "lat": 12.932684,
+        "lon": 77.66461,
+        "pixel_count": 7,
+        "peak_ndci": 0.17827,
+        "peak_ndti": -0.16518,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4241
+      }
+    ],
+    "2025-04-04": [
+      {
+        "hotspot_id": "bellandur_2025-04-04_h01",
+        "lat": 12.938429,
+        "lon": 77.675938,
+        "pixel_count": 14,
+        "peak_ndci": 0.26677,
+        "peak_ndti": -0.05512,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.6169
+      },
+      {
+        "hotspot_id": "bellandur_2025-04-04_h02",
+        "lat": 12.93603,
+        "lon": 77.674577,
+        "pixel_count": 4,
+        "peak_ndci": 0.50605,
+        "peak_ndti": -0.2645,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3588
+      }
+    ],
+    "2025-04-12": [
+      {
+        "hotspot_id": "bellandur_2025-04-12_h01",
+        "lat": 12.934693,
+        "lon": 77.670672,
+        "pixel_count": 21,
+        "peak_ndci": 0.23757,
+        "peak_ndti": 0.11491,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.9999
+      },
+      {
+        "hotspot_id": "bellandur_2025-04-12_h02",
+        "lat": 12.935614,
+        "lon": 77.664737,
+        "pixel_count": 9,
+        "peak_ndci": 0.12237,
+        "peak_ndti": -0.13833,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3866
+      },
+      {
+        "hotspot_id": "bellandur_2025-04-12_h03",
+        "lat": 12.932995,
+        "lon": 77.664766,
+        "pixel_count": 4,
+        "peak_ndci": 0.10313,
+        "peak_ndti": -0.14172,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3812
+      }
+    ],
+    "2025-04-22": [
+      {
+        "hotspot_id": "bellandur_2025-04-22_h01",
+        "lat": 12.935509,
+        "lon": 77.664393,
+        "pixel_count": 9,
+        "peak_ndci": 0.08311,
+        "peak_ndti": -0.08161,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3991
+      },
+      {
+        "hotspot_id": "bellandur_2025-04-22_h02",
+        "lat": 12.93178,
+        "lon": 77.662236,
+        "pixel_count": 3,
+        "peak_ndci": 0.52527,
+        "peak_ndti": -0.2262,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3763
+      }
+    ],
+    "2025-05-12": [],
+    "2025-06-06": [
+      {
+        "hotspot_id": "bellandur_2025-06-06_h01",
+        "lat": 12.932608,
+        "lon": 77.657425,
+        "pixel_count": 7,
+        "peak_ndci": 0.12476,
+        "peak_ndti": 0.09524,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.57
+      },
+      {
+        "hotspot_id": "bellandur_2025-06-06_h02",
+        "lat": 12.934809,
+        "lon": 77.669354,
+        "pixel_count": 46,
+        "peak_ndci": 0.1535,
+        "peak_ndti": 0.02338,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4107
+      },
+      {
+        "hotspot_id": "bellandur_2025-06-06_h03",
+        "lat": 12.933397,
+        "lon": 77.662096,
+        "pixel_count": 65,
+        "peak_ndci": 0.19014,
+        "peak_ndti": 0.01501,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3943
+      }
+    ],
+    "2025-12-08": [
+      {
+        "hotspot_id": "bellandur_2025-12-08_h01",
+        "lat": 12.936752,
+        "lon": 77.674593,
+        "pixel_count": 74,
+        "peak_ndci": 0.52861,
+        "peak_ndti": -0.147,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6913
+      },
+      {
+        "hotspot_id": "bellandur_2025-12-08_h02",
+        "lat": 12.935769,
+        "lon": 77.664252,
+        "pixel_count": 87,
+        "peak_ndci": 0.4629,
+        "peak_ndti": -0.15845,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5725
+      },
+      {
+        "hotspot_id": "bellandur_2025-12-08_h03",
+        "lat": 12.933234,
+        "lon": 77.658224,
+        "pixel_count": 4,
+        "peak_ndci": 0.39752,
+        "peak_ndti": -0.22653,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4907
+      }
+    ],
+    "2025-12-13": [
+      {
+        "hotspot_id": "bellandur_2025-12-13_h01",
+        "lat": 12.936517,
+        "lon": 77.674817,
+        "pixel_count": 56,
+        "peak_ndci": 0.62939,
+        "peak_ndti": -0.31647,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4118
+      },
+      {
+        "hotspot_id": "bellandur_2025-12-13_h02",
+        "lat": 12.933253,
+        "lon": 77.673132,
+        "pixel_count": 3,
+        "peak_ndci": 0.55616,
+        "peak_ndti": -0.27388,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3564
+      }
+    ],
+    "2026-01-07": [
+      {
+        "hotspot_id": "bellandur_2026-01-07_h01",
+        "lat": 12.940299,
+        "lon": 77.673856,
+        "pixel_count": 5,
+        "peak_ndci": 0.15537,
+        "peak_ndti": 0.06267,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3514
+      },
+      {
+        "hotspot_id": "bellandur_2026-01-07_h02",
+        "lat": 12.937938,
+        "lon": 77.667828,
+        "pixel_count": 7,
+        "peak_ndci": 0.19221,
+        "peak_ndti": 0.06113,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3497
+      }
+    ],
+    "2026-01-22": [
+      {
+        "hotspot_id": "bellandur_2026-01-22_h01",
+        "lat": 12.939683,
+        "lon": 77.674092,
+        "pixel_count": 11,
+        "peak_ndci": 0.1673,
+        "peak_ndti": 0.10404,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4887
+      },
+      {
+        "hotspot_id": "bellandur_2026-01-22_h02",
+        "lat": 12.933022,
+        "lon": 77.669701,
+        "pixel_count": 28,
+        "peak_ndci": 0.14119,
+        "peak_ndti": 0.08432,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4812
+      },
+      {
+        "hotspot_id": "bellandur_2026-01-22_h03",
+        "lat": 12.937954,
+        "lon": 77.669996,
+        "pixel_count": 16,
+        "peak_ndci": 0.17231,
+        "peak_ndti": 0.06071,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4392
+      }
+    ],
+    "2026-02-01": [
+      {
+        "hotspot_id": "bellandur_2026-02-01_h01",
+        "lat": 12.937182,
+        "lon": 77.668027,
+        "pixel_count": 14,
+        "peak_ndci": 0.1078,
+        "peak_ndti": 0.08163,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3906
+      },
+      {
+        "hotspot_id": "bellandur_2026-02-01_h02",
+        "lat": 12.933105,
+        "lon": 77.669681,
+        "pixel_count": 32,
+        "peak_ndci": 0.12707,
+        "peak_ndti": 0.07627,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3857
+      },
+      {
+        "hotspot_id": "bellandur_2026-02-01_h03",
+        "lat": 12.937822,
+        "lon": 77.674368,
+        "pixel_count": 30,
+        "peak_ndci": 0.10585,
+        "peak_ndti": 0.0758,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3756
+      }
+    ],
+    "2026-02-11": [
+      {
+        "hotspot_id": "bellandur_2026-02-11_h01",
+        "lat": 12.936229,
+        "lon": 77.67244,
+        "pixel_count": 120,
+        "peak_ndci": 0.15698,
+        "peak_ndti": 0.1034,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5141
+      },
+      {
+        "hotspot_id": "bellandur_2026-02-11_h02",
+        "lat": 12.941435,
+        "lon": 77.664146,
+        "pixel_count": 3,
+        "peak_ndci": 0.13724,
+        "peak_ndti": 0.0355,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4369
+      }
+    ],
+    "2026-02-16": [
+      {
+        "hotspot_id": "bellandur_2026-02-16_h01",
+        "lat": 12.937298,
+        "lon": 77.668272,
+        "pixel_count": 21,
+        "peak_ndci": 0.12657,
+        "peak_ndti": 0.13028,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3867
+      },
+      {
+        "hotspot_id": "bellandur_2026-02-16_h02",
+        "lat": 12.933407,
+        "lon": 77.669279,
+        "pixel_count": 30,
+        "peak_ndci": 0.15483,
+        "peak_ndti": 0.10122,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3583
+      }
+    ],
+    "2026-03-03": [],
+    "2026-03-10": [
+      {
+        "hotspot_id": "bellandur_2026-03-10_h01",
+        "lat": 12.934974,
+        "lon": 77.66467,
+        "pixel_count": 64,
+        "peak_ndci": 0.76958,
+        "peak_ndti": -0.39038,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.573
+      }
+    ],
+    "2026-03-20": [],
+    "2026-03-28": [
+      {
+        "hotspot_id": "bellandur_2026-03-28_h01",
+        "lat": 12.936794,
+        "lon": 77.664883,
+        "pixel_count": 3,
+        "peak_ndci": 0.36416,
+        "peak_ndti": -0.27724,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.362
+      }
+    ],
+    "2026-04-09": [],
+    "2026-04-12": [],
+    "2026-04-27": [
+      {
+        "hotspot_id": "bellandur_2026-04-27_h01",
+        "lat": 12.93938,
+        "lon": 77.66611,
+        "pixel_count": 3,
+        "peak_ndci": 0.60877,
+        "peak_ndti": -0.33066,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7617
+      },
+      {
+        "hotspot_id": "bellandur_2026-04-27_h02",
+        "lat": 12.933968,
+        "lon": 77.664007,
+        "pixel_count": 36,
+        "peak_ndci": 0.60601,
+        "peak_ndti": -0.2011,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6416
+      }
+    ],
+    "2026-05-12": [],
+    "2026-10-29": [
+      {
+        "hotspot_id": "bellandur_2026-10-29_h01",
+        "lat": 12.941775,
+        "lon": 77.663227,
+        "pixel_count": 5,
+        "peak_ndci": 0.40531,
+        "peak_ndti": -0.22588,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4398
+      }
+    ],
+    "2026-11-23": [
+      {
+        "hotspot_id": "bellandur_2026-11-23_h01",
+        "lat": 12.936078,
+        "lon": 77.665856,
+        "pixel_count": 3,
+        "peak_ndci": 0.48543,
+        "peak_ndti": 0.04911,
+        "dominant_signal": "combined",
+        "severity_score": 0.6604
+      },
+      {
+        "hotspot_id": "bellandur_2026-11-23_h02",
+        "lat": 12.942216,
+        "lon": 77.662524,
+        "pixel_count": 13,
+        "peak_ndci": 0.48121,
+        "peak_ndti": -0.12714,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6147
+      },
+      {
+        "hotspot_id": "bellandur_2026-11-23_h03",
+        "lat": 12.932598,
+        "lon": 77.665371,
+        "pixel_count": 3,
+        "peak_ndci": 0.30267,
+        "peak_ndti": 0.0,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4732
+      }
+    ]
+  },
+  "hussain_sagar": {
+    "2024-06-16": [],
+    "2024-10-29": [],
+    "2024-11-18": [],
+    "2024-12-23": [],
+    "2025-02-01": [
+      {
+        "hotspot_id": "hussain_sagar_2025-02-01_h01",
+        "lat": 17.432768,
+        "lon": 78.467614,
+        "pixel_count": 17,
+        "peak_ndci": 0.18029,
+        "peak_ndti": 0.05257,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.6318
+      },
+      {
+        "hotspot_id": "hussain_sagar_2025-02-01_h02",
+        "lat": 17.433424,
+        "lon": 78.472027,
+        "pixel_count": 14,
+        "peak_ndci": 0.54766,
+        "peak_ndti": -0.21629,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.545
+      },
+      {
+        "hotspot_id": "hussain_sagar_2025-02-01_h03",
+        "lat": 17.421675,
+        "lon": 78.474413,
+        "pixel_count": 722,
+        "peak_ndci": 0.54433,
+        "peak_ndti": -0.23853,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.513
+      }
+    ],
+    "2025-02-21": [],
+    "2025-03-03": [],
+    "2025-03-13": [
+      {
+        "hotspot_id": "hussain_sagar_2025-03-13_h01",
+        "lat": 17.433891,
+        "lon": 78.468803,
+        "pixel_count": 23,
+        "peak_ndci": 0.22869,
+        "peak_ndti": -0.00594,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4188
+      }
+    ],
+    "2025-03-18": [
+      {
+        "hotspot_id": "hussain_sagar_2025-03-18_h01",
+        "lat": 17.435688,
+        "lon": 78.469528,
+        "pixel_count": 6,
+        "peak_ndci": 0.15697,
+        "peak_ndti": -0.04947,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4146
+      },
+      {
+        "hotspot_id": "hussain_sagar_2025-03-18_h02",
+        "lat": 17.434062,
+        "lon": 78.4677,
+        "pixel_count": 3,
+        "peak_ndci": 0.11005,
+        "peak_ndti": -0.06596,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3736
+      }
+    ],
+    "2025-04-12": [
+      {
+        "hotspot_id": "hussain_sagar_2025-04-12_h01",
+        "lat": 17.423831,
+        "lon": 78.473453,
+        "pixel_count": 900,
+        "peak_ndci": 0.26137,
+        "peak_ndti": 0.07089,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.7148
+      }
+    ],
+    "2025-04-22": [
+      {
+        "hotspot_id": "hussain_sagar_2025-04-22_h01",
+        "lat": 17.433153,
+        "lon": 78.469686,
+        "pixel_count": 72,
+        "peak_ndci": 0.24759,
+        "peak_ndti": 0.06239,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5594
+      }
+    ],
+    "2025-05-07": [
+      {
+        "hotspot_id": "hussain_sagar_2025-05-07_h01",
+        "lat": 17.43254,
+        "lon": 78.468853,
+        "pixel_count": 53,
+        "peak_ndci": 0.296,
+        "peak_ndti": 0.69954,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.8517
+      }
+    ],
+    "2025-05-14": [
+      {
+        "hotspot_id": "hussain_sagar_2025-05-14_h01",
+        "lat": 17.431749,
+        "lon": 78.46904,
+        "pixel_count": 112,
+        "peak_ndci": 0.59398,
+        "peak_ndti": 0.34636,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.6947
+      },
+      {
+        "hotspot_id": "hussain_sagar_2025-05-14_h02",
+        "lat": 17.428483,
+        "lon": 78.484816,
+        "pixel_count": 28,
+        "peak_ndci": 0.70533,
+        "peak_ndti": -0.30964,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5161
+      }
+    ],
+    "2025-06-06": [],
+    "2025-11-10": [],
+    "2025-12-08": [
+      {
+        "hotspot_id": "hussain_sagar_2025-12-08_h01",
+        "lat": 17.433489,
+        "lon": 78.479634,
+        "pixel_count": 5,
+        "peak_ndci": 0.10866,
+        "peak_ndti": -0.01859,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4637
+      },
+      {
+        "hotspot_id": "hussain_sagar_2025-12-08_h02",
+        "lat": 17.432825,
+        "lon": 78.467025,
+        "pixel_count": 3,
+        "peak_ndci": 0.09119,
+        "peak_ndti": -0.05793,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3521
+      }
+    ],
+    "2025-12-28": [
+      {
+        "hotspot_id": "hussain_sagar_2025-12-28_h01",
+        "lat": 17.431015,
+        "lon": 78.470187,
+        "pixel_count": 41,
+        "peak_ndci": 0.1819,
+        "peak_ndti": -0.03903,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4226
+      }
+    ],
+    "2026-01-17": [
+      {
+        "hotspot_id": "hussain_sagar_2026-01-17_h01",
+        "lat": 17.433272,
+        "lon": 78.479889,
+        "pixel_count": 4,
+        "peak_ndci": 0.08407,
+        "peak_ndti": -0.03615,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.428
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-01-17_h02",
+        "lat": 17.432548,
+        "lon": 78.467669,
+        "pixel_count": 9,
+        "peak_ndci": 0.2032,
+        "peak_ndti": -0.04394,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3963
+      }
+    ],
+    "2026-02-06": [
+      {
+        "hotspot_id": "hussain_sagar_2026-02-06_h01",
+        "lat": 17.432086,
+        "lon": 78.467807,
+        "pixel_count": 38,
+        "peak_ndci": 0.2358,
+        "peak_ndti": 0.00619,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5879
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-02-06_h02",
+        "lat": 17.428958,
+        "lon": 78.483224,
+        "pixel_count": 44,
+        "peak_ndci": 0.47402,
+        "peak_ndti": -0.16419,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3705
+      }
+    ],
+    "2026-02-21": [
+      {
+        "hotspot_id": "hussain_sagar_2026-02-21_h01",
+        "lat": 17.432363,
+        "lon": 78.466876,
+        "pixel_count": 6,
+        "peak_ndci": 0.14705,
+        "peak_ndti": -0.00059,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5794
+      }
+    ],
+    "2026-03-10": [
+      {
+        "hotspot_id": "hussain_sagar_2026-03-10_h01",
+        "lat": 17.432027,
+        "lon": 78.467145,
+        "pixel_count": 9,
+        "peak_ndci": 0.1288,
+        "peak_ndti": -0.0168,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4092
+      }
+    ],
+    "2026-03-20": [],
+    "2026-03-28": [
+      {
+        "hotspot_id": "hussain_sagar_2026-03-28_h01",
+        "lat": 17.427809,
+        "lon": 78.47073,
+        "pixel_count": 141,
+        "peak_ndci": 0.11816,
+        "peak_ndti": -0.00866,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4664
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-03-28_h02",
+        "lat": 17.433442,
+        "lon": 78.480376,
+        "pixel_count": 3,
+        "peak_ndci": 0.1126,
+        "peak_ndti": -0.05223,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3842
+      }
+    ],
+    "2026-04-07": [
+      {
+        "hotspot_id": "hussain_sagar_2026-04-07_h01",
+        "lat": 17.429388,
+        "lon": 78.4693,
+        "pixel_count": 62,
+        "peak_ndci": 0.3887,
+        "peak_ndti": 0.38761,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.7972
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-04-07_h02",
+        "lat": 17.426101,
+        "lon": 78.482606,
+        "pixel_count": 182,
+        "peak_ndci": 0.68063,
+        "peak_ndti": -0.24813,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6421
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-04-07_h03",
+        "lat": 17.433254,
+        "lon": 78.479737,
+        "pixel_count": 3,
+        "peak_ndci": 0.13112,
+        "peak_ndti": -0.04238,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3954
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-04-07_h04",
+        "lat": 17.433169,
+        "lon": 78.471825,
+        "pixel_count": 7,
+        "peak_ndci": 0.4764,
+        "peak_ndti": -0.25599,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3813
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-04-07_h05",
+        "lat": 17.421534,
+        "lon": 78.475841,
+        "pixel_count": 54,
+        "peak_ndci": 0.47575,
+        "peak_ndti": -0.23096,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3721
+      }
+    ],
+    "2026-04-27": [],
+    "2026-05-02": [
+      {
+        "hotspot_id": "hussain_sagar_2026-05-02_h01",
+        "lat": 17.430457,
+        "lon": 78.468875,
+        "pixel_count": 41,
+        "peak_ndci": 0.14461,
+        "peak_ndti": -0.02135,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3864
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-05-02_h02",
+        "lat": 17.418587,
+        "lon": 78.466598,
+        "pixel_count": 5,
+        "peak_ndci": 0.14014,
+        "peak_ndti": -0.03904,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3493
+      }
+    ],
+    "2026-05-12": [
+      {
+        "hotspot_id": "hussain_sagar_2026-05-12_h01",
+        "lat": 17.431084,
+        "lon": 78.482246,
+        "pixel_count": 41,
+        "peak_ndci": 0.48222,
+        "peak_ndti": -0.25442,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.369
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-05-12_h02",
+        "lat": 17.421579,
+        "lon": 78.467731,
+        "pixel_count": 67,
+        "peak_ndci": 0.47902,
+        "peak_ndti": -0.2538,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3611
+      },
+      {
+        "hotspot_id": "hussain_sagar_2026-05-12_h03",
+        "lat": 17.418069,
+        "lon": 78.473258,
+        "pixel_count": 7,
+        "peak_ndci": 0.46484,
+        "peak_ndti": -0.26058,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3485
+      }
+    ],
+    "2026-06-06": [],
+    "2026-06-16": [
+      {
+        "hotspot_id": "hussain_sagar_2026-06-16_h01",
+        "lat": 17.430795,
+        "lon": 78.468449,
+        "pixel_count": 12,
+        "peak_ndci": 0.08432,
+        "peak_ndti": 0.09915,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3681
+      }
+    ],
+    "2026-09-29": [],
+    "2026-10-14": [],
+    "2026-11-18": []
+  },
+  "yamuna_okhla": {
+    "2024-06-02": [],
+    "2024-06-12": [],
+    "2024-06-17": [],
+    "2024-10-05": [
+      {
+        "hotspot_id": "yamuna_okhla_2024-10-05_h01",
+        "lat": 28.553149,
+        "lon": 77.309943,
+        "pixel_count": 154,
+        "peak_ndci": 0.43323,
+        "peak_ndti": -0.04979,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.815
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2024-10-05_h02",
+        "lat": 28.564176,
+        "lon": 77.301374,
+        "pixel_count": 4,
+        "peak_ndci": 0.39625,
+        "peak_ndti": -0.10032,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7953
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2024-10-05_h03",
+        "lat": 28.558413,
+        "lon": 77.298151,
+        "pixel_count": 6,
+        "peak_ndci": 0.39252,
+        "peak_ndti": -0.13203,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7413
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2024-10-05_h04",
+        "lat": 28.553352,
+        "lon": 77.300662,
+        "pixel_count": 22,
+        "peak_ndci": 0.33956,
+        "peak_ndti": -0.09472,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6313
+      }
+    ],
+    "2024-10-30": [],
+    "2024-12-04": [],
+    "2025-01-23": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-01-23_h01",
+        "lat": 28.54729,
+        "lon": 77.313406,
+        "pixel_count": 3,
+        "peak_ndci": 0.26258,
+        "peak_ndti": -0.07711,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3723
+      }
+    ],
+    "2025-03-04": [],
+    "2025-03-19": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h01",
+        "lat": 28.547953,
+        "lon": 77.314566,
+        "pixel_count": 25,
+        "peak_ndci": 0.28938,
+        "peak_ndti": 0.2898,
+        "dominant_signal": "combined",
+        "severity_score": 0.7539
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h02",
+        "lat": 28.560409,
+        "lon": 77.300952,
+        "pixel_count": 212,
+        "peak_ndci": 0.31249,
+        "peak_ndti": 0.34397,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.7426
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h03",
+        "lat": 28.556461,
+        "lon": 77.308037,
+        "pixel_count": 33,
+        "peak_ndci": 0.37805,
+        "peak_ndti": -0.01196,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6932
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h04",
+        "lat": 28.558532,
+        "lon": 77.297744,
+        "pixel_count": 5,
+        "peak_ndci": 0.28812,
+        "peak_ndti": -0.01293,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5415
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h05",
+        "lat": 28.551973,
+        "lon": 77.309184,
+        "pixel_count": 13,
+        "peak_ndci": 0.2692,
+        "peak_ndti": -0.02594,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.522
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h06",
+        "lat": 28.558025,
+        "lon": 77.312015,
+        "pixel_count": 10,
+        "peak_ndci": 0.07673,
+        "peak_ndti": 0.08713,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4317
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-03-19_h07",
+        "lat": 28.551278,
+        "lon": 77.312186,
+        "pixel_count": 5,
+        "peak_ndci": 0.07956,
+        "peak_ndti": 0.06796,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3719
+      }
+    ],
+    "2025-04-03": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-03_h01",
+        "lat": 28.554326,
+        "lon": 77.309351,
+        "pixel_count": 50,
+        "peak_ndci": 0.20678,
+        "peak_ndti": -0.01983,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5087
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-03_h02",
+        "lat": 28.562571,
+        "lon": 77.299781,
+        "pixel_count": 4,
+        "peak_ndci": 0.16061,
+        "peak_ndti": -0.01487,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4052
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-03_h03",
+        "lat": 28.56454,
+        "lon": 77.300876,
+        "pixel_count": 6,
+        "peak_ndci": 0.15231,
+        "peak_ndti": -0.01376,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3781
+      }
+    ],
+    "2025-04-18": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-18_h01",
+        "lat": 28.55163,
+        "lon": 77.310558,
+        "pixel_count": 208,
+        "peak_ndci": 0.31091,
+        "peak_ndti": 0.07379,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7632
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-18_h02",
+        "lat": 28.559833,
+        "lon": 77.299269,
+        "pixel_count": 151,
+        "peak_ndci": 0.31297,
+        "peak_ndti": 0.00935,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7513
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-18_h03",
+        "lat": 28.561579,
+        "lon": 77.306042,
+        "pixel_count": 5,
+        "peak_ndci": 0.22699,
+        "peak_ndti": -0.01196,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6155
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-18_h04",
+        "lat": 28.56448,
+        "lon": 77.300942,
+        "pixel_count": 14,
+        "peak_ndci": 0.23343,
+        "peak_ndti": 0.01628,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5927
+      }
+    ],
+    "2025-04-28": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-04-28_h01",
+        "lat": 28.557495,
+        "lon": 77.306909,
+        "pixel_count": 3,
+        "peak_ndci": 0.22428,
+        "peak_ndti": -0.067,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4102
+      }
+    ],
+    "2025-05-18": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-05-18_h01",
+        "lat": 28.55106,
+        "lon": 77.31137,
+        "pixel_count": 194,
+        "peak_ndci": 0.85762,
+        "peak_ndti": 0.43439,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.8715
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-05-18_h02",
+        "lat": 28.558664,
+        "lon": 77.300505,
+        "pixel_count": 120,
+        "peak_ndci": 0.61028,
+        "peak_ndti": 0.0513,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.8249
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-05-18_h03",
+        "lat": 28.568553,
+        "lon": 77.294541,
+        "pixel_count": 12,
+        "peak_ndci": 0.3394,
+        "peak_ndti": 0.05747,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.55
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-05-18_h04",
+        "lat": 28.563945,
+        "lon": 77.30468,
+        "pixel_count": 3,
+        "peak_ndci": 0.26551,
+        "peak_ndti": 0.01055,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4394
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-05-18_h05",
+        "lat": 28.571402,
+        "lon": 77.29622,
+        "pixel_count": 3,
+        "peak_ndci": 0.20123,
+        "peak_ndti": 0.07806,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.439
+      }
+    ],
+    "2025-06-02": [],
+    "2025-06-07": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-06-07_h01",
+        "lat": 28.558168,
+        "lon": 77.309946,
+        "pixel_count": 4,
+        "peak_ndci": 0.33456,
+        "peak_ndti": -0.1233,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.419
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-06-07_h02",
+        "lat": 28.567508,
+        "lon": 77.300559,
+        "pixel_count": 8,
+        "peak_ndci": 0.33074,
+        "peak_ndti": -0.14029,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4081
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-06-07_h03",
+        "lat": 28.556939,
+        "lon": 77.306143,
+        "pixel_count": 5,
+        "peak_ndci": 0.32308,
+        "peak_ndti": -0.12493,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3995
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-06-07_h04",
+        "lat": 28.554111,
+        "lon": 77.30005,
+        "pixel_count": 5,
+        "peak_ndci": 0.3112,
+        "peak_ndti": -0.14593,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3823
+      }
+    ],
+    "2025-06-12": [],
+    "2025-10-15": [],
+    "2025-11-14": [],
+    "2025-12-09": [
+      {
+        "hotspot_id": "yamuna_okhla_2025-12-09_h01",
+        "lat": 28.56535,
+        "lon": 77.29856,
+        "pixel_count": 3,
+        "peak_ndci": 0.11593,
+        "peak_ndti": 0.04652,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5121
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2025-12-09_h02",
+        "lat": 28.546405,
+        "lon": 77.314765,
+        "pixel_count": 27,
+        "peak_ndci": 0.13311,
+        "peak_ndti": 0.0478,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4996
+      }
+    ],
+    "2026-02-17": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-02-17_h01",
+        "lat": 28.550595,
+        "lon": 77.309922,
+        "pixel_count": 191,
+        "peak_ndci": 0.5177,
+        "peak_ndti": 0.22327,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.798
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-02-17_h02",
+        "lat": 28.565463,
+        "lon": 77.297896,
+        "pixel_count": 94,
+        "peak_ndci": 0.31936,
+        "peak_ndti": 0.0692,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5588
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-02-17_h03",
+        "lat": 28.558219,
+        "lon": 77.298076,
+        "pixel_count": 8,
+        "peak_ndci": 0.32602,
+        "peak_ndti": -0.02109,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4388
+      }
+    ],
+    "2026-03-06": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h01",
+        "lat": 28.562376,
+        "lon": 77.299652,
+        "pixel_count": 248,
+        "peak_ndci": 0.35221,
+        "peak_ndti": 0.16332,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.7932
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h02",
+        "lat": 28.551906,
+        "lon": 77.308907,
+        "pixel_count": 12,
+        "peak_ndci": 0.45088,
+        "peak_ndti": -0.0326,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7595
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h03",
+        "lat": 28.555251,
+        "lon": 77.310686,
+        "pixel_count": 11,
+        "peak_ndci": 0.40435,
+        "peak_ndti": -0.03523,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6607
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h04",
+        "lat": 28.549728,
+        "lon": 77.314428,
+        "pixel_count": 3,
+        "peak_ndci": 0.31181,
+        "peak_ndti": -0.10132,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5189
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h05",
+        "lat": 28.556892,
+        "lon": 77.305831,
+        "pixel_count": 4,
+        "peak_ndci": 0.29483,
+        "peak_ndti": -0.1016,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5154
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h06",
+        "lat": 28.551492,
+        "lon": 77.312845,
+        "pixel_count": 3,
+        "peak_ndci": 0.29655,
+        "peak_ndti": -0.03755,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5073
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h07",
+        "lat": 28.556973,
+        "lon": 77.312589,
+        "pixel_count": 4,
+        "peak_ndci": 0.23049,
+        "peak_ndti": 0.05367,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4758
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h08",
+        "lat": 28.559766,
+        "lon": 77.3101,
+        "pixel_count": 15,
+        "peak_ndci": 0.24481,
+        "peak_ndti": 0.05361,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4712
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-03-06_h09",
+        "lat": 28.546451,
+        "lon": 77.315241,
+        "pixel_count": 20,
+        "peak_ndci": 0.1134,
+        "peak_ndti": 0.05151,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4659
+      }
+    ],
+    "2026-04-18": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-04-18_h01",
+        "lat": 28.55227,
+        "lon": 77.312011,
+        "pixel_count": 4,
+        "peak_ndci": 0.18485,
+        "peak_ndti": -0.04236,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.399
+      }
+    ],
+    "2026-04-28": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-04-28_h01",
+        "lat": 28.562434,
+        "lon": 77.298998,
+        "pixel_count": 206,
+        "peak_ndci": 0.35252,
+        "peak_ndti": 0.86013,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.8895
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-04-28_h02",
+        "lat": 28.550496,
+        "lon": 77.310658,
+        "pixel_count": 159,
+        "peak_ndci": 0.3663,
+        "peak_ndti": 0.60872,
+        "dominant_signal": "combined",
+        "severity_score": 0.8183
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-04-28_h03",
+        "lat": 28.557873,
+        "lon": 77.312165,
+        "pixel_count": 11,
+        "peak_ndci": 0.24203,
+        "peak_ndti": 0.19953,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.7622
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-04-28_h04",
+        "lat": 28.561795,
+        "lon": 77.301546,
+        "pixel_count": 3,
+        "peak_ndci": 0.20524,
+        "peak_ndti": 0.04804,
+        "dominant_signal": "combined",
+        "severity_score": 0.3593
+      }
+    ],
+    "2026-05-15": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-05-15_h01",
+        "lat": 28.553273,
+        "lon": 77.301193,
+        "pixel_count": 4,
+        "peak_ndci": 0.34764,
+        "peak_ndti": -0.12393,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4457
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-05-15_h02",
+        "lat": 28.557683,
+        "lon": 77.298046,
+        "pixel_count": 3,
+        "peak_ndci": 0.33579,
+        "peak_ndti": -0.11436,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4171
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-05-15_h03",
+        "lat": 28.552538,
+        "lon": 77.309678,
+        "pixel_count": 3,
+        "peak_ndci": 0.32734,
+        "peak_ndti": -0.14739,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4063
+      }
+    ],
+    "2026-06-07": [],
+    "2026-06-17": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-17_h01",
+        "lat": 28.55539,
+        "lon": 77.30848,
+        "pixel_count": 4,
+        "peak_ndci": 0.31919,
+        "peak_ndti": -0.11631,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4517
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-17_h02",
+        "lat": 28.552897,
+        "lon": 77.301565,
+        "pixel_count": 4,
+        "peak_ndci": 0.30467,
+        "peak_ndti": -0.1099,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4387
+      }
+    ],
+    "2026-06-27": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-27_h01",
+        "lat": 28.558154,
+        "lon": 77.301222,
+        "pixel_count": 95,
+        "peak_ndci": 0.33703,
+        "peak_ndti": 0.34727,
+        "dominant_signal": "combined",
+        "severity_score": 0.781
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-27_h02",
+        "lat": 28.550022,
+        "lon": 77.311552,
+        "pixel_count": 77,
+        "peak_ndci": 0.47774,
+        "peak_ndti": 0.18386,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.776
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-27_h03",
+        "lat": 28.558524,
+        "lon": 77.298043,
+        "pixel_count": 13,
+        "peak_ndci": 0.39098,
+        "peak_ndti": -0.03465,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.6302
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-27_h04",
+        "lat": 28.558653,
+        "lon": 77.311078,
+        "pixel_count": 14,
+        "peak_ndci": 0.35877,
+        "peak_ndti": 0.02718,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5173
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-06-27_h05",
+        "lat": 28.569287,
+        "lon": 77.293211,
+        "pixel_count": 3,
+        "peak_ndci": 0.32284,
+        "peak_ndti": -0.05329,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5003
+      }
+    ],
+    "2026-07-12": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-07-12_h01",
+        "lat": 28.548917,
+        "lon": 77.31438,
+        "pixel_count": 13,
+        "peak_ndci": 0.47843,
+        "peak_ndti": 0.09064,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5641
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-07-12_h02",
+        "lat": 28.558671,
+        "lon": 77.298137,
+        "pixel_count": 4,
+        "peak_ndci": 0.42479,
+        "peak_ndti": 0.03803,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4923
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-07-12_h03",
+        "lat": 28.556109,
+        "lon": 77.309027,
+        "pixel_count": 30,
+        "peak_ndci": 0.41301,
+        "peak_ndti": 0.15189,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4686
+      },
+      {
+        "hotspot_id": "yamuna_okhla_2026-07-12_h04",
+        "lat": 28.551924,
+        "lon": 77.30867,
+        "pixel_count": 18,
+        "peak_ndci": 0.39795,
+        "peak_ndti": 0.11819,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4514
+      }
+    ],
+    "2026-09-10": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-09-10_h01",
+        "lat": 28.55552,
+        "lon": 77.308409,
+        "pixel_count": 3,
+        "peak_ndci": 0.34467,
+        "peak_ndti": 0.04101,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4749
+      }
+    ],
+    "2026-09-30": [],
+    "2026-10-22": [],
+    "2026-11-24": [
+      {
+        "hotspot_id": "yamuna_okhla_2026-11-24_h01",
+        "lat": 28.556263,
+        "lon": 77.306978,
+        "pixel_count": 4,
+        "peak_ndci": 0.28745,
+        "peak_ndti": -0.09302,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3762
+      }
+    ]
+  },
+  "sukhna": {
+    "2024-06-02": [],
+    "2024-06-07": [],
+    "2024-06-17": [],
+    "2024-08-31": [
+      {
+        "hotspot_id": "sukhna_2024-08-31_h01",
+        "lat": 30.741475,
+        "lon": 76.818657,
+        "pixel_count": 486,
+        "peak_ndci": 0.36589,
+        "peak_ndti": -0.12954,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7884
+      }
+    ],
+    "2024-10-05": [
+      {
+        "hotspot_id": "sukhna_2024-10-05_h01",
+        "lat": 30.740066,
+        "lon": 76.823894,
+        "pixel_count": 3,
+        "peak_ndci": 0.23716,
+        "peak_ndti": -0.1245,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4035
+      }
+    ],
+    "2024-11-04": [],
+    "2024-12-09": [],
+    "2025-01-28": [],
+    "2025-03-04": [],
+    "2025-03-14": [],
+    "2025-03-31": [
+      {
+        "hotspot_id": "sukhna_2025-03-31_h01",
+        "lat": 30.742704,
+        "lon": 76.824183,
+        "pixel_count": 15,
+        "peak_ndci": 0.23105,
+        "peak_ndti": 0.05049,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4772
+      },
+      {
+        "hotspot_id": "sukhna_2025-03-31_h02",
+        "lat": 30.739269,
+        "lon": 76.823014,
+        "pixel_count": 118,
+        "peak_ndci": 0.21598,
+        "peak_ndti": 0.04563,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4543
+      },
+      {
+        "hotspot_id": "sukhna_2025-03-31_h03",
+        "lat": 30.743598,
+        "lon": 76.812683,
+        "pixel_count": 55,
+        "peak_ndci": 0.15573,
+        "peak_ndti": 0.04406,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4495
+      }
+    ],
+    "2025-04-13": [],
+    "2025-04-23": [
+      {
+        "hotspot_id": "sukhna_2025-04-23_h01",
+        "lat": 30.740737,
+        "lon": 76.818268,
+        "pixel_count": 313,
+        "peak_ndci": 0.11732,
+        "peak_ndti": 0.0633,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4884
+      },
+      {
+        "hotspot_id": "sukhna_2025-04-23_h02",
+        "lat": 30.742673,
+        "lon": 76.823517,
+        "pixel_count": 9,
+        "peak_ndci": 0.12518,
+        "peak_ndti": 0.05572,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4808
+      }
+    ],
+    "2025-05-13": [],
+    "2025-05-23": [
+      {
+        "hotspot_id": "sukhna_2025-05-23_h01",
+        "lat": 30.743806,
+        "lon": 76.81716,
+        "pixel_count": 119,
+        "peak_ndci": 0.2216,
+        "peak_ndti": 0.07973,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4252
+      },
+      {
+        "hotspot_id": "sukhna_2025-05-23_h02",
+        "lat": 30.737422,
+        "lon": 76.817906,
+        "pixel_count": 12,
+        "peak_ndci": 0.12702,
+        "peak_ndti": 0.0621,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.3706
+      }
+    ],
+    "2025-06-12": [
+      {
+        "hotspot_id": "sukhna_2025-06-12_h01",
+        "lat": 30.742364,
+        "lon": 76.826781,
+        "pixel_count": 11,
+        "peak_ndci": 0.54588,
+        "peak_ndti": -0.07408,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.9756
+      },
+      {
+        "hotspot_id": "sukhna_2025-06-12_h02",
+        "lat": 30.740728,
+        "lon": 76.824336,
+        "pixel_count": 23,
+        "peak_ndci": 0.42457,
+        "peak_ndti": -0.0463,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.9527
+      },
+      {
+        "hotspot_id": "sukhna_2025-06-12_h03",
+        "lat": 30.740295,
+        "lon": 76.827705,
+        "pixel_count": 16,
+        "peak_ndci": 0.4914,
+        "peak_ndti": -0.00697,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.8989
+      }
+    ],
+    "2025-08-21": [
+      {
+        "hotspot_id": "sukhna_2025-08-21_h01",
+        "lat": 30.741103,
+        "lon": 76.820043,
+        "pixel_count": 550,
+        "peak_ndci": 0.28477,
+        "peak_ndti": -0.06069,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.844
+      }
+    ],
+    "2025-09-25": [
+      {
+        "hotspot_id": "sukhna_2025-09-25_h01",
+        "lat": 30.743643,
+        "lon": 76.821753,
+        "pixel_count": 11,
+        "peak_ndci": 0.20064,
+        "peak_ndti": -0.11766,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.501
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h02",
+        "lat": 30.741656,
+        "lon": 76.826384,
+        "pixel_count": 16,
+        "peak_ndci": 0.20208,
+        "peak_ndti": -0.08587,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.5006
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h03",
+        "lat": 30.746857,
+        "lon": 76.812777,
+        "pixel_count": 14,
+        "peak_ndci": 0.1929,
+        "peak_ndti": -0.1212,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4569
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h04",
+        "lat": 30.744873,
+        "lon": 76.818787,
+        "pixel_count": 5,
+        "peak_ndci": 0.18411,
+        "peak_ndti": -0.12003,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4313
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h05",
+        "lat": 30.741824,
+        "lon": 76.830063,
+        "pixel_count": 3,
+        "peak_ndci": 0.18319,
+        "peak_ndti": -0.15331,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4253
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h06",
+        "lat": 30.736857,
+        "lon": 76.818721,
+        "pixel_count": 4,
+        "peak_ndci": 0.18208,
+        "peak_ndti": -0.10356,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4239
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h07",
+        "lat": 30.738465,
+        "lon": 76.815812,
+        "pixel_count": 4,
+        "peak_ndci": 0.18239,
+        "peak_ndti": -0.1013,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.4209
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h08",
+        "lat": 30.745689,
+        "lon": 76.815863,
+        "pixel_count": 3,
+        "peak_ndci": 0.17261,
+        "peak_ndti": -0.1222,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3933
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h09",
+        "lat": 30.736398,
+        "lon": 76.821856,
+        "pixel_count": 8,
+        "peak_ndci": 0.17199,
+        "peak_ndti": -0.09177,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3821
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h10",
+        "lat": 30.744177,
+        "lon": 76.811718,
+        "pixel_count": 7,
+        "peak_ndci": 0.17272,
+        "peak_ndti": -0.09332,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3813
+      },
+      {
+        "hotspot_id": "sukhna_2025-09-25_h11",
+        "lat": 30.741009,
+        "lon": 76.813521,
+        "pixel_count": 4,
+        "peak_ndci": 0.16772,
+        "peak_ndti": -0.10108,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.3669
+      }
+    ],
+    "2025-09-27": [],
+    "2025-10-17": [],
+    "2025-11-09": [],
+    "2025-11-29": [
+      {
+        "hotspot_id": "sukhna_2025-11-29_h01",
+        "lat": 30.741107,
+        "lon": 76.819034,
+        "pixel_count": 405,
+        "peak_ndci": 0.15258,
+        "peak_ndti": -0.01523,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5124
+      }
+    ],
+    "2026-02-12": [
+      {
+        "hotspot_id": "sukhna_2026-02-12_h01",
+        "lat": 30.741134,
+        "lon": 76.825965,
+        "pixel_count": 21,
+        "peak_ndci": 0.05043,
+        "peak_ndti": 0.00752,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.5124
+      },
+      {
+        "hotspot_id": "sukhna_2026-02-12_h02",
+        "lat": 30.744067,
+        "lon": 76.819771,
+        "pixel_count": 44,
+        "peak_ndci": 0.03906,
+        "peak_ndti": -0.02286,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4081
+      },
+      {
+        "hotspot_id": "sukhna_2026-02-12_h03",
+        "lat": 30.739595,
+        "lon": 76.815529,
+        "pixel_count": 4,
+        "peak_ndci": -0.01304,
+        "peak_ndti": -0.0375,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.362
+      }
+    ],
+    "2026-03-06": [],
+    "2026-04-18": [],
+    "2026-05-15": [
+      {
+        "hotspot_id": "sukhna_2026-05-15_h01",
+        "lat": 30.740831,
+        "lon": 76.819943,
+        "pixel_count": 523,
+        "peak_ndci": 0.16816,
+        "peak_ndti": 0.0456,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.6047
+      }
+    ],
+    "2026-06-07": [
+      {
+        "hotspot_id": "sukhna_2026-06-07_h01",
+        "lat": 30.739257,
+        "lon": 76.827539,
+        "pixel_count": 34,
+        "peak_ndci": 0.16645,
+        "peak_ndti": 0.02564,
+        "dominant_signal": "turbidity_sediment_proxy",
+        "severity_score": 0.4497
+      }
+    ],
+    "2026-06-17": [],
+    "2026-09-20": [
+      {
+        "hotspot_id": "sukhna_2026-09-20_h01",
+        "lat": 30.741165,
+        "lon": 76.81977,
+        "pixel_count": 549,
+        "peak_ndci": 0.29508,
+        "peak_ndti": -0.12786,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7155
+      }
+    ],
+    "2026-09-30": [
+      {
+        "hotspot_id": "sukhna_2026-09-30_h01",
+        "lat": 30.741175,
+        "lon": 76.820024,
+        "pixel_count": 548,
+        "peak_ndci": 0.31707,
+        "peak_ndti": -0.12374,
+        "dominant_signal": "algal_bloom_proxy",
+        "severity_score": 0.7565
+      }
+    ],
+    "2026-10-10": [],
+    "2026-11-24": []
+  }
+}
