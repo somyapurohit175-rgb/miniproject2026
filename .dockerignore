@@ -1,0 +1,14 @@
+.git/
+.venv/
+.env
+.env.*
+**/.env*
+**/__pycache__/
+**/*.py[cod]
+.pytest_cache/
+data/raw/
+frontend/
+docs/
+ml/
+scratch/
+tests/
