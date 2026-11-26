@@ -1,0 +1,257 @@
+{
+  "model_name": "WaterCNNLSTM",
+  "checkpoint_path": "models/cnn_lstm_best.pt",
+  "onnx_export": {
+    "exported": true,
+    "verified_onnxruntime": true,
+    "path": "models/cnn_lstm_best.onnx",
+    "max_abs_diff": 1.1920928955078125e-07
+  },
+  "dataset_info": {
+    "npz_dir": "data/processed/sentinel_patches/",
+    "csv_source": "data/processed/sentinel_anomalies.csv",
+    "actual_input_shape": [
+      4,
+      9,
+      64,
+      64
+    ],
+    "channel_order": [
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B8A",
+      "NDCI",
+      "NDTI",
+      "water_mask"
+    ],
+    "target_order": [
+      "NDWI",
+      "NDCI",
+      "NDTI",
+      "Chla",
+      "TSS"
+    ],
+    "target_columns": [
+      "NDWI_med",
+      "NDCI_med",
+      "NDTI_med",
+      "pred_chla_proxy",
+      "pred_tss_proxy"
+    ],
+    "label_sources": {
+      "NDWI": "Sentinel-2 L2A scene median (unitless)",
+      "NDCI": "Sentinel-2 L2A scene median (unitless)",
+      "NDTI": "Sentinel-2 L2A scene median (unitless)",
+      "Chla": "Day 2 Random Forest proxy estimate (mg/m^3, NOT ground truth)",
+      "TSS": "Day 2 Random Forest proxy estimate (mg/L, NOT ground truth)"
+    },
+    "total_sequences": 112,
+    "chronological_split": {
+      "train": {
+        "target_indices": "4..18",
+        "count": 60,
+        "per_lake": 15
+      },
+      "validation": {
+        "target_indices": "19..23",
+        "count": 20,
+        "per_lake": 5
+      },
+      "test": {
+        "target_indices": "24..31",
+        "count": 32,
+        "per_lake": 8
+      }
+    }
+  },
+  "training_configuration": {
+    "loss": "SmoothL1Loss",
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 120,
+    "patience": 15,
+    "batch_size": 8,
+    "random_seed": 42,
+    "best_epoch": 41,
+    "best_val_loss": 0.44863816201686857,
+    "final_train_loss": 0.210812708735466,
+    "final_val_loss": 0.45687565207481384,
+    "trainable_parameters": 25029,
+    "augmentation": "Train-only random horizontal/vertical flips and 90/180/270 rotations applied uniformly across 4 frames & 9 channels",
+    "normalization": "Train-only channel standardization on channels 0..7 (water_mask kept in {0,1}); log1p on Chla & TSS then train-only target standardization"
+  },
+  "test_metrics": {
+    "NDWI": {
+      "target": "NDWI",
+      "label_type": "Sentinel-2 Index",
+      "unit": "unitless",
+      "r2_orig": 0.0925799012184143,
+      "mae_orig": 0.11865769326686859,
+      "rmse_orig": 0.16809473931789398,
+      "r2_log": null,
+      "mae_log": null,
+      "rmse_log": null
+    },
+    "NDCI": {
+      "target": "NDCI",
+      "label_type": "Sentinel-2 Index",
+      "unit": "unitless",
+      "r2_orig": -0.11815571784973145,
+      "mae_orig": 0.07137735188007355,
+      "rmse_orig": 0.10290637612342834,
+      "r2_log": null,
+      "mae_log": null,
+      "rmse_log": null
+    },
+    "NDTI": {
+      "target": "NDTI",
+      "label_type": "Sentinel-2 Index",
+      "unit": "unitless",
+      "r2_orig": 0.13117313385009766,
+      "mae_orig": 0.06164319068193436,
+      "rmse_orig": 0.08062415570020676,
+      "r2_log": null,
+      "mae_log": null,
+      "rmse_log": null
+    },
+    "Chla": {
+      "target": "Chla",
+      "label_type": "Day 2 RF Proxy (Case 2)",
+      "unit": "mg/m\u00b3 (RF proxy)",
+      "r2_orig": 0.3146095871925354,
+      "mae_orig": 71.91511535644531,
+      "rmse_orig": 107.49296569824219,
+      "r2_log": 0.3595585227012634,
+      "mae_log": 0.5068985223770142,
+      "rmse_log": 0.6557726263999939
+    },
+    "TSS": {
+      "target": "TSS",
+      "label_type": "Day 2 RF Proxy (Case 2)",
+      "unit": "mg/L (RF proxy)",
+      "r2_orig": -0.06916391849517822,
+      "mae_orig": 50.268333435058594,
+      "rmse_orig": 149.5108642578125,
+      "r2_log": -0.045971035957336426,
+      "mae_log": 0.5407854914665222,
+      "rmse_log": 0.7604191303253174
+    }
+  },
+  "persistence_baseline_same_32_test": [
+    {
+      "Target": "NDWI",
+      "Persist_R2": -0.6723482608795166,
+      "CNN_LSTM_R2": 0.0925799012184143,
+      "Persist_MAE": 0.17671677470207214,
+      "CNN_LSTM_MAE": 0.11865769326686859,
+      "Persist_RMSE": 0.22819876670837402,
+      "CNN_LSTM_RMSE": 0.16809473931789398
+    },
+    {
+      "Target": "NDCI",
+      "Persist_R2": -0.8008750677108765,
+      "CNN_LSTM_R2": -0.11815571784973145,
+      "Persist_MAE": 0.09061799943447113,
+      "CNN_LSTM_MAE": 0.07137735188007355,
+      "Persist_RMSE": 0.13059692084789276,
+      "CNN_LSTM_RMSE": 0.10290637612342834
+    },
+    {
+      "Target": "NDTI",
+      "Persist_R2": -0.5063776969909668,
+      "CNN_LSTM_R2": 0.13117313385009766,
+      "Persist_MAE": 0.07585708796977997,
+      "CNN_LSTM_MAE": 0.06164319068193436,
+      "Persist_RMSE": 0.10616112500429153,
+      "CNN_LSTM_RMSE": 0.08062415570020676
+    },
+    {
+      "Target": "Chla",
+      "Persist_R2": 0.2804147005081177,
+      "CNN_LSTM_R2": 0.3146095871925354,
+      "Persist_MAE": 77.61431884765625,
+      "CNN_LSTM_MAE": 71.91511535644531,
+      "Persist_RMSE": 110.14180755615234,
+      "CNN_LSTM_RMSE": 107.49296569824219
+    },
+    {
+      "Target": "TSS",
+      "Persist_R2": -1.1144099235534668,
+      "CNN_LSTM_R2": -0.06916391849517822,
+      "Persist_MAE": 82.49970245361328,
+      "CNN_LSTM_MAE": 50.268333435058594,
+      "Persist_RMSE": 210.25445556640625,
+      "CNN_LSTM_RMSE": 149.5108642578125
+    }
+  ],
+  "day2_gloria_baseline_reference": {
+    "note": "Evaluated on GLORIA lab matchups (n=908 Chla, n=904 TSS) \u2014 NOT directly equivalent to Sentinel-2 n=32 proxy forecasts.",
+    "Chla": {
+      "r2_log": 0.8753773194127876,
+      "rmse_log": 0.423836550011109,
+      "mae_log": 0.2941521133048026,
+      "r2_orig": 0.3965999280508684,
+      "mae_orig": 6.344640569178191,
+      "rmse_orig": 38.518004720546195,
+      "mdape_pct": 25.814018738923856,
+      "n_test": 908,
+      "n_positive_actual": 908
+    },
+    "TSS": {
+      "r2_log": 0.49806306549263046,
+      "rmse_log": 0.7471340401467449,
+      "mae_log": 0.5877184950417728,
+      "r2_orig": 0.5625248648892645,
+      "mae_orig": 13.504161680427773,
+      "rmse_orig": 61.692689591648566,
+      "mdape_pct": 59.62237013261933,
+      "n_test": 904,
+      "n_positive_actual": 904
+    }
+  },
+  "anomaly_comparison": {
+    "method": "Two-sided max |residual - mu_val| / std_val > 2.0 (fitted on validation residuals n=20 ONLY)",
+    "real_held_out_test_n32": {
+      "day2_rolling_mad_flagged": 16,
+      "cnn_lstm_residual_flagged": 6,
+      "agreement_count": 18,
+      "note": "No real-world anomaly ground-truth labels exist; Precision/Recall/F1 cannot be claimed on real scenes."
+    },
+    "synthetic_benchmark_n64": {
+      "note": "Exact Day 2 anomaly_benchmark.csv (32 normal + 32 injected plumes on t=24..31), evaluated across the 4 shared benchmark targets (NDCI_med, NDTI_med, pred_chla_proxy, pred_tss_proxy).",
+      "day2_rolling_mad": {
+        "Detector": "Day 2 Rolling MAD",
+        "Precision": 0.6444444444444445,
+        "Recall": 0.90625,
+        "F1": 0.7532467532467533,
+        "ROC-AUC": 0.79638671875,
+        "TP": 29,
+        "FP": 16,
+        "TN": 16,
+        "FN": 3
+      },
+      "cnn_lstm_residual": {
+        "Detector": "CNN-LSTM residual detector",
+        "Precision": 0.5,
+        "Recall": 0.15625,
+        "F1": 0.23809523809523808,
+        "ROC-AUC": 0.48681640625,
+        "TP": 5,
+        "FP": 5,
+        "TN": 27,
+        "FN": 27
+      }
+    }
+  },
+  "limitations": [
+    "No laboratory-confirmed Chla/TSS measurements exist for the 4 Indian Sentinel-2 lakes; Chla and TSS targets are Day 2 RF proxy estimates (Case 2 teacher-student experiment).",
+    "Small dataset size (112 total temporal sequences: 60 train, 20 val, 32 test) limits deep spatio-temporal generalization.",
+    "Irregular inter-observation intervals (2 to 185 days across monsoon cloud gaps) violate fixed-step LSTM spacing assumptions.",
+    "Actual NPZ patches are (9, 64, 64) with B8A (no B08/NDWI/B07 channel), rather than (8, 32, 32).",
+    "Semi-synthetic benchmark evaluates localized simulated B04/B05 plumes only and does not prove real-world pollution detection accuracy."
+  ]
+}
