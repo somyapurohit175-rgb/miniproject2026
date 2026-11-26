@@ -1,0 +1,414 @@
+{
+  "environment": {
+    "python_version": "3.11.0",
+    "pytorch_version": "2.15.0+cpu",
+    "onnx_version": "1.23.2",
+    "onnxruntime_version": "1.32.0",
+    "numpy_version": "2.4.6",
+    "device": "CPU",
+    "ort_providers": [
+      "CPUExecutionProvider"
+    ],
+    "pytorch_num_threads": 14,
+    "os": "Windows-10-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "cpu_count_logical": 18
+  },
+  "model_spec": {
+    "model_class": "WaterCNNLSTM",
+    "input_name": "input_sequence",
+    "output_name": "predictions",
+    "input_shape": [
+      "batch",
+      4,
+      9,
+      64,
+      64
+    ],
+    "output_shape": [
+      "batch",
+      5
+    ],
+    "onnx_fp32_opset": [
+      18
+    ],
+    "onnx_fp32_exporter": "torch.onnx.export(..., dynamo=True, opset_version=18, external_data=False)",
+    "onnx_int8_quantization": "quant_pre_process + onnxruntime.quantization.quantize_dynamic(weight_type=QuantType.QInt8)"
+  },
+  "file_sizes": {
+    "pytorch_fp32": {
+      "path": "models/cnn_lstm_best.pt",
+      "bytes": 112030,
+      "mb": 0.10684,
+      "note": "Includes PyTorch state_dict plus checkpoint metadata & normalization arrays"
+    },
+    "onnx_fp32": {
+      "path": "models/cnn_lstm_fp32.onnx",
+      "bytes": 137611,
+      "mb": 0.131236
+    },
+    "onnx_int8": {
+      "path": "models/cnn_lstm_int8.onnx",
+      "bytes": 35666,
+      "mb": 0.034014,
+      "size_reduction_vs_onnx_fp32_pct": 74.08
+    }
+  },
+  "operator_analysis": {
+    "fp32_graph_op_counts": {
+      "Shape": 2,
+      "Reshape": 4,
+      "Conv": 3,
+      "Relu": 4,
+      "MaxPool": 2,
+      "ReduceMean": 1,
+      "Gemm": 2,
+      "Concat": 2,
+      "Expand": 1,
+      "Transpose": 3,
+      "Slice": 5,
+      "LSTM": 1,
+      "Mul": 1,
+      "Gather": 1
+    },
+    "int8_graph_op_counts": {
+      "Reshape": 7,
+      "Shape": 2,
+      "Concat": 2,
+      "DynamicQuantizeLinear": 5,
+      "Expand": 1,
+      "Mul": 11,
+      "ConvInteger": 3,
+      "Slice": 5,
+      "Cast": 5,
+      "Add": 5,
+      "Relu": 4,
+      "MaxPool": 2,
+      "ReduceMean": 1,
+      "MatMulInteger": 2,
+      "Transpose": 2,
+      "DynamicQuantizeLSTM": 1,
+      "Gather": 2
+    },
+    "quantized_operators": [
+      "Conv -> ConvInteger (3 Conv2d layers)",
+      "Gemm -> MatMulInteger (2 Linear layers: spatial_proj.1, head.1)",
+      "LSTM -> DynamicQuantizeLSTM (1 LSTM layer)",
+      "Activation dynamic quantization helpers: DynamicQuantizeLinear, Cast, Mul, Add"
+    ],
+    "fp32_remaining_operators": [
+      "Relu (4 nodes)",
+      "MaxPool (2 nodes)",
+      "ReduceMean (1 node)",
+      "Tensor/shape ops: Shape, Slice, Gather, Concat, Expand, Reshape, Transpose"
+    ],
+    "lstm_quantization_status": "Quantized to DynamicQuantizeLSTM in ONNX Runtime 1.32.0"
+  },
+  "numerical_comparison_vs_pytorch_fp32": {
+    "tolerance_scaled": 0.0001,
+    "onnx_fp32_test_n32": {
+      "all_finite": true,
+      "shape": [
+        32,
+        5
+      ],
+      "scaled_space": {
+        "max_abs_diff": 3.5762786865234375e-07,
+        "mean_abs_diff": 1.0668300376437401e-07,
+        "rmse_diff": 1.4157573957618297e-07,
+        "relative_l2_diff": 2.001208940782817e-07,
+        "relative_mean_diff": 5.506016123035806e-07
+      },
+      "original_units": {
+        "NDWI": {
+          "max_abs_diff": 5.960464477539063e-08,
+          "mean_abs_diff": 1.7695128917694092e-08,
+          "rmse_diff": 2.560713774357737e-08
+        },
+        "NDCI": {
+          "max_abs_diff": 5.960464477539063e-08,
+          "mean_abs_diff": 1.83936208486557e-08,
+          "rmse_diff": 2.5093916278251527e-08
+        },
+        "NDTI": {
+          "max_abs_diff": 3.725290298461914e-08,
+          "mean_abs_diff": 1.501757651567459e-08,
+          "rmse_diff": 1.807101845940906e-08
+        },
+        "Chla": {
+          "max_abs_diff": 5.340576171875e-05,
+          "mean_abs_diff": 6.198883056640625e-06,
+          "rmse_diff": 1.5318277291953564e-05
+        },
+        "TSS": {
+          "max_abs_diff": 1.1444091796875e-05,
+          "mean_abs_diff": 7.152557373046875e-07,
+          "rmse_diff": 2.86102294921875e-06
+        }
+      }
+    },
+    "onnx_fp32_all_n112": {
+      "all_finite": true,
+      "shape": [
+        112,
+        5
+      ],
+      "scaled_space": {
+        "max_abs_diff": 5.364418029785156e-07,
+        "mean_abs_diff": 1.200308474835765e-07,
+        "rmse_diff": 1.5818604026662797e-07,
+        "relative_l2_diff": 2.0878717066352692e-07,
+        "relative_mean_diff": 6.793975444452371e-07
+      },
+      "original_units": {
+        "NDWI": {
+          "max_abs_diff": 1.1920928955078125e-07,
+          "mean_abs_diff": 2.501266394006052e-08,
+          "rmse_diff": 3.3586690761922e-08
+        },
+        "NDCI": {
+          "max_abs_diff": 5.960464477539063e-08,
+          "mean_abs_diff": 1.902558999233861e-08,
+          "rmse_diff": 2.548101640797995e-08
+        },
+        "NDTI": {
+          "max_abs_diff": 3.725290298461914e-08,
+          "mean_abs_diff": 1.240654690093379e-08,
+          "rmse_diff": 1.576188957130853e-08
+        },
+        "Chla": {
+          "max_abs_diff": 0.0001068115234375,
+          "mean_abs_diff": 8.957727004599292e-06,
+          "rmse_diff": 2.3694263290963136e-05
+        },
+        "TSS": {
+          "max_abs_diff": 1.1444091796875e-05,
+          "mean_abs_diff": 7.322856276914536e-07,
+          "rmse_diff": 2.797883098537568e-06
+        }
+      }
+    },
+    "onnx_int8_test_n32": {
+      "all_finite": true,
+      "shape": [
+        32,
+        5
+      ],
+      "scaled_space": {
+        "max_abs_diff": 0.08633118867874146,
+        "mean_abs_diff": 0.025328148156404495,
+        "rmse_diff": 0.03208417072892189,
+        "relative_l2_diff": 0.0453517884016037,
+        "relative_mean_diff": 0.1364651620388031
+      },
+      "original_units": {
+        "NDWI": {
+          "max_abs_diff": 0.016597211360931396,
+          "mean_abs_diff": 0.009880991652607918,
+          "rmse_diff": 0.010662931017577648
+        },
+        "NDCI": {
+          "max_abs_diff": 0.006961390376091003,
+          "mean_abs_diff": 0.0030344328843057156,
+          "rmse_diff": 0.00350487744435668
+        },
+        "NDTI": {
+          "max_abs_diff": 0.004761353135108948,
+          "mean_abs_diff": 0.0012687321286648512,
+          "rmse_diff": 0.0015985395293682814
+        },
+        "Chla": {
+          "max_abs_diff": 3.8723526000976562,
+          "mean_abs_diff": 1.4039206504821777,
+          "rmse_diff": 1.5854613780975342
+        },
+        "TSS": {
+          "max_abs_diff": 0.72784423828125,
+          "mean_abs_diff": 0.35285651683807373,
+          "rmse_diff": 0.42268916964530945
+        }
+      }
+    },
+    "onnx_int8_all_n112": {
+      "all_finite": true,
+      "shape": [
+        112,
+        5
+      ],
+      "scaled_space": {
+        "max_abs_diff": 0.6961227059364319,
+        "mean_abs_diff": 0.12946702539920807,
+        "rmse_diff": 0.17059899866580963,
+        "relative_l2_diff": 0.22517085075378418,
+        "relative_mean_diff": 0.8182730674743652
+      },
+      "original_units": {
+        "NDWI": {
+          "max_abs_diff": 0.1325674057006836,
+          "mean_abs_diff": 0.038075726479291916,
+          "rmse_diff": 0.0449354462325573
+        },
+        "NDCI": {
+          "max_abs_diff": 0.03667297959327698,
+          "mean_abs_diff": 0.007033031899482012,
+          "rmse_diff": 0.009199351072311401
+        },
+        "NDTI": {
+          "max_abs_diff": 0.06813688576221466,
+          "mean_abs_diff": 0.01719403825700283,
+          "rmse_diff": 0.02111693285405636
+        },
+        "Chla": {
+          "max_abs_diff": 28.931747436523438,
+          "mean_abs_diff": 9.03577709197998,
+          "rmse_diff": 12.409183502197266
+        },
+        "TSS": {
+          "max_abs_diff": 7.193281173706055,
+          "mean_abs_diff": 2.805102825164795,
+          "rmse_diff": 3.264803886413574
+        }
+      }
+    }
+  },
+  "cpu_benchmarks": {
+    "batch_1": {
+      "pytorch_fp32": {
+        "batch_size": 1,
+        "warmup_iterations": 50,
+        "measured_iterations": 300,
+        "mean_ms": 3.646520333340959,
+        "median_ms": 3.3184499998242245,
+        "p95_ms": 6.309975000340273,
+        "min_ms": 1.924900000631169,
+        "max_ms": 8.496500000546803,
+        "std_ms": 1.2424609921967456,
+        "batches_per_sec": 274.2340391898474,
+        "samples_per_sec": 274.2340391898474
+      },
+      "onnx_fp32": {
+        "batch_size": 1,
+        "warmup_iterations": 50,
+        "measured_iterations": 300,
+        "mean_ms": 1.66385400004098,
+        "median_ms": 0.9107999999287131,
+        "p95_ms": 3.707014999599784,
+        "min_ms": 0.6358000000545871,
+        "max_ms": 34.39319999961299,
+        "std_ms": 2.904908987447132,
+        "batches_per_sec": 601.0142716700927,
+        "samples_per_sec": 601.0142716700927
+      },
+      "onnx_int8": {
+        "batch_size": 1,
+        "warmup_iterations": 50,
+        "measured_iterations": 300,
+        "mean_ms": 5.444004333379174,
+        "median_ms": 5.115500000101747,
+        "p95_ms": 7.595674999765834,
+        "min_ms": 4.00420000005397,
+        "max_ms": 11.085399999501533,
+        "std_ms": 1.0372200490129986,
+        "batches_per_sec": 183.68831815004918,
+        "samples_per_sec": 183.68831815004918
+      },
+      "onnx_fp32_single_thread": {
+        "batch_size": 1,
+        "warmup_iterations": 50,
+        "measured_iterations": 300,
+        "mean_ms": 2.139660666674293,
+        "median_ms": 1.8356999999014079,
+        "p95_ms": 3.573184999504521,
+        "min_ms": 1.250399999662477,
+        "max_ms": 6.902599999193626,
+        "std_ms": 0.8046299380707483,
+        "batches_per_sec": 467.36382809444035,
+        "samples_per_sec": 467.36382809444035
+      },
+      "onnx_int8_single_thread": {
+        "batch_size": 1,
+        "warmup_iterations": 50,
+        "measured_iterations": 300,
+        "mean_ms": 23.82260099998348,
+        "median_ms": 22.884999999860156,
+        "p95_ms": 30.077010000013615,
+        "min_ms": 17.552299999806564,
+        "max_ms": 99.82159999981377,
+        "std_ms": 7.1395484071178945,
+        "batches_per_sec": 41.97694449907856,
+        "samples_per_sec": 41.97694449907856
+      }
+    },
+    "batch_32": {
+      "pytorch_fp32": {
+        "batch_size": 32,
+        "warmup_iterations": 30,
+        "measured_iterations": 150,
+        "mean_ms": 61.62923266659467,
+        "median_ms": 61.30749999965701,
+        "p95_ms": 86.028609999812,
+        "min_ms": 32.31229999983043,
+        "max_ms": 108.21049999958632,
+        "std_ms": 15.506893359173796,
+        "batches_per_sec": 16.226066052288157,
+        "samples_per_sec": 519.234113673221
+      },
+      "onnx_fp32": {
+        "batch_size": 32,
+        "warmup_iterations": 30,
+        "measured_iterations": 150,
+        "mean_ms": 21.789945333372696,
+        "median_ms": 18.790749999880063,
+        "p95_ms": 35.497339999892574,
+        "min_ms": 12.543199999527133,
+        "max_ms": 70.89150000047084,
+        "std_ms": 8.447121227683988,
+        "batches_per_sec": 45.89272642499181,
+        "samples_per_sec": 1468.5672455997378
+      },
+      "onnx_int8": {
+        "batch_size": 32,
+        "warmup_iterations": 30,
+        "measured_iterations": 150,
+        "mean_ms": 313.7883999999879,
+        "median_ms": 302.15580000003683,
+        "p95_ms": 551.5011350002624,
+        "min_ms": 158.53270000025077,
+        "max_ms": 994.8779999995168,
+        "std_ms": 113.36598432316019,
+        "batches_per_sec": 3.1868609547071802,
+        "samples_per_sec": 101.97955055062977
+      },
+      "onnx_fp32_single_thread": {
+        "batch_size": 32,
+        "warmup_iterations": 30,
+        "measured_iterations": 150,
+        "mean_ms": 98.57586666670007,
+        "median_ms": 92.59735000023284,
+        "p95_ms": 145.1819299998078,
+        "min_ms": 60.99799999992683,
+        "max_ms": 200.75059999999212,
+        "std_ms": 26.291366417573627,
+        "batches_per_sec": 10.14447079000737,
+        "samples_per_sec": 324.62306528023583
+      },
+      "onnx_int8_single_thread": {
+        "batch_size": 32,
+        "warmup_iterations": 30,
+        "measured_iterations": 150,
+        "mean_ms": 762.7211086666466,
+        "median_ms": 756.9138500002737,
+        "p95_ms": 875.2195499998378,
+        "min_ms": 622.2268999999869,
+        "max_ms": 963.5803000001033,
+        "std_ms": 70.72827048977959,
+        "batches_per_sec": 1.3110952203068738,
+        "samples_per_sec": 41.95504704981996
+      }
+    }
+  },
+  "deployment_recommendation": {
+    "selected_model": "models/cnn_lstm_fp32.onnx",
+    "rationale": "ONNX FP32 matches PyTorch FP32 to machine precision (max_abs_diff <= 5.4e-7 in scaled space), achieves the lowest latency on CPU, and occupies only ~0.13 MB. Dynamic QInt8 quantization reduces file size to ~0.034 MB and quantizes Conv, Linear, and LSTM ops, but dynamic activation quantization overhead slows CPU inference on this compact 25,029-parameter network and introduces up to 0.696 scaled / 28.93 mg/m^3 Chla drift."
+  }
+}

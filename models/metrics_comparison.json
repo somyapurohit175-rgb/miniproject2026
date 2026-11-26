@@ -1,0 +1,601 @@
+{
+  "project": "miniproject2026",
+  "stage": "Day 3 Final Model & Deployment Comparison",
+  "scientific_note": "Day 2 GLORIA RandomForest models were trained and tested on GLORIA laboratory matchups (n=908 Chla, n=904 TSS), whereas Day 3 CNN-LSTM was trained and tested on Sentinel-2 spatio-temporal sequences (n=32 held-out test scenes) targeting Sentinel-2 spectral indices and Day 2 RF proxy estimates (Case 2 teacher-student experiment). Direct same-test-set forecasting comparison is provided against the persistence baseline (y_hat(t) = y(t-1)).",
+  "day2_gloria_baselines": {
+    "source": "models/baseline_metrics.json",
+    "selected_models": {
+      "Chla": {
+        "algorithm": "RandomForest",
+        "model_name": "RandomForest (n=300,max_depth=12,min_leaf=5)",
+        "bundle_path": "models/baseline_chla.pkl",
+        "cv_mean_r2_log": 0.779845752003187,
+        "cv_mean_rmse_log": 0.5739768503528939,
+        "test": {
+          "r2_log": 0.8753773194127876,
+          "rmse_log": 0.423836550011109,
+          "mae_log": 0.2941521133048026,
+          "r2_orig": 0.3965999280508684,
+          "mae_orig": 6.344640569178191,
+          "rmse_orig": 38.518004720546195,
+          "mdape_pct": 25.814018738923856,
+          "n_test": 908,
+          "n_positive_actual": 908
+        }
+      },
+      "TSS": {
+        "algorithm": "RandomForest",
+        "model_name": "RandomForest (n=300,max_depth=12,min_leaf=5)",
+        "bundle_path": "models/baseline_tss.pkl",
+        "cv_mean_r2_log": 0.3828442716575594,
+        "cv_mean_rmse_log": 0.8836156687567371,
+        "test": {
+          "r2_log": 0.49806306549263046,
+          "rmse_log": 0.7471340401467449,
+          "mae_log": 0.5877184950417728,
+          "r2_orig": 0.5625248648892645,
+          "mae_orig": 13.504161680427773,
+          "rmse_orig": 61.692689591648566,
+          "mdape_pct": 59.62237013261933,
+          "n_test": 904,
+          "n_positive_actual": 904
+        }
+      }
+    },
+    "synthetic_anomaly_benchmark_n64": {
+      "precision": 0.6444444444444445,
+      "recall": 0.90625,
+      "f1_score": 0.7532467532467533,
+      "roc_auc": 0.79638671875,
+      "tp": 29,
+      "fp": 16,
+      "tn": 16,
+      "fn": 3
+    }
+  },
+  "day3_cnn_lstm": {
+    "source": "models/cnn_lstm_metrics.json",
+    "training_configuration": {
+      "loss": "SmoothL1Loss",
+      "optimizer": "AdamW",
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "max_epochs": 120,
+      "patience": 15,
+      "batch_size": 8,
+      "random_seed": 42,
+      "best_epoch": 41,
+      "best_val_loss": 0.44863816201686857,
+      "final_train_loss": 0.210812708735466,
+      "final_val_loss": 0.45687565207481384,
+      "trainable_parameters": 25029,
+      "augmentation": "Train-only random horizontal/vertical flips and 90/180/270 rotations applied uniformly across 4 frames & 9 channels",
+      "normalization": "Train-only channel standardization on channels 0..7 (water_mask kept in {0,1}); log1p on Chla & TSS then train-only target standardization"
+    },
+    "test_metrics_n32": {
+      "NDWI": {
+        "target": "NDWI",
+        "label_type": "Sentinel-2 Index",
+        "unit": "unitless",
+        "r2_orig": 0.0925799012184143,
+        "mae_orig": 0.11865769326686859,
+        "rmse_orig": 0.16809473931789398,
+        "r2_log": null,
+        "mae_log": null,
+        "rmse_log": null
+      },
+      "NDCI": {
+        "target": "NDCI",
+        "label_type": "Sentinel-2 Index",
+        "unit": "unitless",
+        "r2_orig": -0.11815571784973145,
+        "mae_orig": 0.07137735188007355,
+        "rmse_orig": 0.10290637612342834,
+        "r2_log": null,
+        "mae_log": null,
+        "rmse_log": null
+      },
+      "NDTI": {
+        "target": "NDTI",
+        "label_type": "Sentinel-2 Index",
+        "unit": "unitless",
+        "r2_orig": 0.13117313385009766,
+        "mae_orig": 0.06164319068193436,
+        "rmse_orig": 0.08062415570020676,
+        "r2_log": null,
+        "mae_log": null,
+        "rmse_log": null
+      },
+      "Chla": {
+        "target": "Chla",
+        "label_type": "Day 2 RF Proxy (Case 2)",
+        "unit": "mg/m\u00b3 (RF proxy)",
+        "r2_orig": 0.3146095871925354,
+        "mae_orig": 71.91511535644531,
+        "rmse_orig": 107.49296569824219,
+        "r2_log": 0.3595585227012634,
+        "mae_log": 0.5068985223770142,
+        "rmse_log": 0.6557726263999939
+      },
+      "TSS": {
+        "target": "TSS",
+        "label_type": "Day 2 RF Proxy (Case 2)",
+        "unit": "mg/L (RF proxy)",
+        "r2_orig": -0.06916391849517822,
+        "mae_orig": 50.268333435058594,
+        "rmse_orig": 149.5108642578125,
+        "r2_log": -0.045971035957336426,
+        "mae_log": 0.5407854914665222,
+        "rmse_log": 0.7604191303253174
+      }
+    },
+    "persistence_baseline_same_32_test": [
+      {
+        "Target": "NDWI",
+        "Persist_R2": -0.6723482608795166,
+        "CNN_LSTM_R2": 0.0925799012184143,
+        "Persist_MAE": 0.17671677470207214,
+        "CNN_LSTM_MAE": 0.11865769326686859,
+        "Persist_RMSE": 0.22819876670837402,
+        "CNN_LSTM_RMSE": 0.16809473931789398
+      },
+      {
+        "Target": "NDCI",
+        "Persist_R2": -0.8008750677108765,
+        "CNN_LSTM_R2": -0.11815571784973145,
+        "Persist_MAE": 0.09061799943447113,
+        "CNN_LSTM_MAE": 0.07137735188007355,
+        "Persist_RMSE": 0.13059692084789276,
+        "CNN_LSTM_RMSE": 0.10290637612342834
+      },
+      {
+        "Target": "NDTI",
+        "Persist_R2": -0.5063776969909668,
+        "CNN_LSTM_R2": 0.13117313385009766,
+        "Persist_MAE": 0.07585708796977997,
+        "CNN_LSTM_MAE": 0.06164319068193436,
+        "Persist_RMSE": 0.10616112500429153,
+        "CNN_LSTM_RMSE": 0.08062415570020676
+      },
+      {
+        "Target": "Chla",
+        "Persist_R2": 0.2804147005081177,
+        "CNN_LSTM_R2": 0.3146095871925354,
+        "Persist_MAE": 77.61431884765625,
+        "CNN_LSTM_MAE": 71.91511535644531,
+        "Persist_RMSE": 110.14180755615234,
+        "CNN_LSTM_RMSE": 107.49296569824219
+      },
+      {
+        "Target": "TSS",
+        "Persist_R2": -1.1144099235534668,
+        "CNN_LSTM_R2": -0.06916391849517822,
+        "Persist_MAE": 82.49970245361328,
+        "CNN_LSTM_MAE": 50.268333435058594,
+        "Persist_RMSE": 210.25445556640625,
+        "CNN_LSTM_RMSE": 149.5108642578125
+      }
+    ],
+    "anomaly_comparison": {
+      "method": "Two-sided max |residual - mu_val| / std_val > 2.0 (fitted on validation residuals n=20 ONLY)",
+      "real_held_out_test_n32": {
+        "day2_rolling_mad_flagged": 16,
+        "cnn_lstm_residual_flagged": 6,
+        "agreement_count": 18,
+        "note": "No real-world anomaly ground-truth labels exist; Precision/Recall/F1 cannot be claimed on real scenes."
+      },
+      "synthetic_benchmark_n64": {
+        "note": "Exact Day 2 anomaly_benchmark.csv (32 normal + 32 injected plumes on t=24..31), evaluated across the 4 shared benchmark targets (NDCI_med, NDTI_med, pred_chla_proxy, pred_tss_proxy).",
+        "day2_rolling_mad": {
+          "Detector": "Day 2 Rolling MAD",
+          "Precision": 0.6444444444444445,
+          "Recall": 0.90625,
+          "F1": 0.7532467532467533,
+          "ROC-AUC": 0.79638671875,
+          "TP": 29,
+          "FP": 16,
+          "TN": 16,
+          "FN": 3
+        },
+        "cnn_lstm_residual": {
+          "Detector": "CNN-LSTM residual detector",
+          "Precision": 0.5,
+          "Recall": 0.15625,
+          "F1": 0.23809523809523808,
+          "ROC-AUC": 0.48681640625,
+          "TP": 5,
+          "FP": 5,
+          "TN": 27,
+          "FN": 27
+        }
+      }
+    },
+    "residual_stats_file": "models/cnn_lstm_residual_stats.json"
+  },
+  "deployment_inference_formats": {
+    "source": "models/onnx_benchmark_results.json",
+    "file_sizes": {
+      "pytorch_fp32": {
+        "path": "models/cnn_lstm_best.pt",
+        "bytes": 112030,
+        "mb": 0.10684,
+        "note": "Includes PyTorch state_dict plus checkpoint metadata & normalization arrays"
+      },
+      "onnx_fp32": {
+        "path": "models/cnn_lstm_fp32.onnx",
+        "bytes": 137611,
+        "mb": 0.131236
+      },
+      "onnx_int8": {
+        "path": "models/cnn_lstm_int8.onnx",
+        "bytes": 35666,
+        "mb": 0.034014,
+        "size_reduction_vs_onnx_fp32_pct": 74.08
+      }
+    },
+    "cpu_benchmarks": {
+      "batch_1": {
+        "pytorch_fp32": {
+          "batch_size": 1,
+          "warmup_iterations": 50,
+          "measured_iterations": 300,
+          "mean_ms": 3.646520333340959,
+          "median_ms": 3.3184499998242245,
+          "p95_ms": 6.309975000340273,
+          "min_ms": 1.924900000631169,
+          "max_ms": 8.496500000546803,
+          "std_ms": 1.2424609921967456,
+          "batches_per_sec": 274.2340391898474,
+          "samples_per_sec": 274.2340391898474
+        },
+        "onnx_fp32": {
+          "batch_size": 1,
+          "warmup_iterations": 50,
+          "measured_iterations": 300,
+          "mean_ms": 1.66385400004098,
+          "median_ms": 0.9107999999287131,
+          "p95_ms": 3.707014999599784,
+          "min_ms": 0.6358000000545871,
+          "max_ms": 34.39319999961299,
+          "std_ms": 2.904908987447132,
+          "batches_per_sec": 601.0142716700927,
+          "samples_per_sec": 601.0142716700927
+        },
+        "onnx_int8": {
+          "batch_size": 1,
+          "warmup_iterations": 50,
+          "measured_iterations": 300,
+          "mean_ms": 5.444004333379174,
+          "median_ms": 5.115500000101747,
+          "p95_ms": 7.595674999765834,
+          "min_ms": 4.00420000005397,
+          "max_ms": 11.085399999501533,
+          "std_ms": 1.0372200490129986,
+          "batches_per_sec": 183.68831815004918,
+          "samples_per_sec": 183.68831815004918
+        },
+        "onnx_fp32_single_thread": {
+          "batch_size": 1,
+          "warmup_iterations": 50,
+          "measured_iterations": 300,
+          "mean_ms": 2.139660666674293,
+          "median_ms": 1.8356999999014079,
+          "p95_ms": 3.573184999504521,
+          "min_ms": 1.250399999662477,
+          "max_ms": 6.902599999193626,
+          "std_ms": 0.8046299380707483,
+          "batches_per_sec": 467.36382809444035,
+          "samples_per_sec": 467.36382809444035
+        },
+        "onnx_int8_single_thread": {
+          "batch_size": 1,
+          "warmup_iterations": 50,
+          "measured_iterations": 300,
+          "mean_ms": 23.82260099998348,
+          "median_ms": 22.884999999860156,
+          "p95_ms": 30.077010000013615,
+          "min_ms": 17.552299999806564,
+          "max_ms": 99.82159999981377,
+          "std_ms": 7.1395484071178945,
+          "batches_per_sec": 41.97694449907856,
+          "samples_per_sec": 41.97694449907856
+        }
+      },
+      "batch_32": {
+        "pytorch_fp32": {
+          "batch_size": 32,
+          "warmup_iterations": 30,
+          "measured_iterations": 150,
+          "mean_ms": 61.62923266659467,
+          "median_ms": 61.30749999965701,
+          "p95_ms": 86.028609999812,
+          "min_ms": 32.31229999983043,
+          "max_ms": 108.21049999958632,
+          "std_ms": 15.506893359173796,
+          "batches_per_sec": 16.226066052288157,
+          "samples_per_sec": 519.234113673221
+        },
+        "onnx_fp32": {
+          "batch_size": 32,
+          "warmup_iterations": 30,
+          "measured_iterations": 150,
+          "mean_ms": 21.789945333372696,
+          "median_ms": 18.790749999880063,
+          "p95_ms": 35.497339999892574,
+          "min_ms": 12.543199999527133,
+          "max_ms": 70.89150000047084,
+          "std_ms": 8.447121227683988,
+          "batches_per_sec": 45.89272642499181,
+          "samples_per_sec": 1468.5672455997378
+        },
+        "onnx_int8": {
+          "batch_size": 32,
+          "warmup_iterations": 30,
+          "measured_iterations": 150,
+          "mean_ms": 313.7883999999879,
+          "median_ms": 302.15580000003683,
+          "p95_ms": 551.5011350002624,
+          "min_ms": 158.53270000025077,
+          "max_ms": 994.8779999995168,
+          "std_ms": 113.36598432316019,
+          "batches_per_sec": 3.1868609547071802,
+          "samples_per_sec": 101.97955055062977
+        },
+        "onnx_fp32_single_thread": {
+          "batch_size": 32,
+          "warmup_iterations": 30,
+          "measured_iterations": 150,
+          "mean_ms": 98.57586666670007,
+          "median_ms": 92.59735000023284,
+          "p95_ms": 145.1819299998078,
+          "min_ms": 60.99799999992683,
+          "max_ms": 200.75059999999212,
+          "std_ms": 26.291366417573627,
+          "batches_per_sec": 10.14447079000737,
+          "samples_per_sec": 324.62306528023583
+        },
+        "onnx_int8_single_thread": {
+          "batch_size": 32,
+          "warmup_iterations": 30,
+          "measured_iterations": 150,
+          "mean_ms": 762.7211086666466,
+          "median_ms": 756.9138500002737,
+          "p95_ms": 875.2195499998378,
+          "min_ms": 622.2268999999869,
+          "max_ms": 963.5803000001033,
+          "std_ms": 70.72827048977959,
+          "batches_per_sec": 1.3110952203068738,
+          "samples_per_sec": 41.95504704981996
+        }
+      }
+    },
+    "numerical_comparison_vs_pytorch_fp32": {
+      "tolerance_scaled": 0.0001,
+      "onnx_fp32_test_n32": {
+        "all_finite": true,
+        "shape": [
+          32,
+          5
+        ],
+        "scaled_space": {
+          "max_abs_diff": 3.5762786865234375e-07,
+          "mean_abs_diff": 1.0668300376437401e-07,
+          "rmse_diff": 1.4157573957618297e-07,
+          "relative_l2_diff": 2.001208940782817e-07,
+          "relative_mean_diff": 5.506016123035806e-07
+        },
+        "original_units": {
+          "NDWI": {
+            "max_abs_diff": 5.960464477539063e-08,
+            "mean_abs_diff": 1.7695128917694092e-08,
+            "rmse_diff": 2.560713774357737e-08
+          },
+          "NDCI": {
+            "max_abs_diff": 5.960464477539063e-08,
+            "mean_abs_diff": 1.83936208486557e-08,
+            "rmse_diff": 2.5093916278251527e-08
+          },
+          "NDTI": {
+            "max_abs_diff": 3.725290298461914e-08,
+            "mean_abs_diff": 1.501757651567459e-08,
+            "rmse_diff": 1.807101845940906e-08
+          },
+          "Chla": {
+            "max_abs_diff": 5.340576171875e-05,
+            "mean_abs_diff": 6.198883056640625e-06,
+            "rmse_diff": 1.5318277291953564e-05
+          },
+          "TSS": {
+            "max_abs_diff": 1.1444091796875e-05,
+            "mean_abs_diff": 7.152557373046875e-07,
+            "rmse_diff": 2.86102294921875e-06
+          }
+        }
+      },
+      "onnx_fp32_all_n112": {
+        "all_finite": true,
+        "shape": [
+          112,
+          5
+        ],
+        "scaled_space": {
+          "max_abs_diff": 5.364418029785156e-07,
+          "mean_abs_diff": 1.200308474835765e-07,
+          "rmse_diff": 1.5818604026662797e-07,
+          "relative_l2_diff": 2.0878717066352692e-07,
+          "relative_mean_diff": 6.793975444452371e-07
+        },
+        "original_units": {
+          "NDWI": {
+            "max_abs_diff": 1.1920928955078125e-07,
+            "mean_abs_diff": 2.501266394006052e-08,
+            "rmse_diff": 3.3586690761922e-08
+          },
+          "NDCI": {
+            "max_abs_diff": 5.960464477539063e-08,
+            "mean_abs_diff": 1.902558999233861e-08,
+            "rmse_diff": 2.548101640797995e-08
+          },
+          "NDTI": {
+            "max_abs_diff": 3.725290298461914e-08,
+            "mean_abs_diff": 1.240654690093379e-08,
+            "rmse_diff": 1.576188957130853e-08
+          },
+          "Chla": {
+            "max_abs_diff": 0.0001068115234375,
+            "mean_abs_diff": 8.957727004599292e-06,
+            "rmse_diff": 2.3694263290963136e-05
+          },
+          "TSS": {
+            "max_abs_diff": 1.1444091796875e-05,
+            "mean_abs_diff": 7.322856276914536e-07,
+            "rmse_diff": 2.797883098537568e-06
+          }
+        }
+      },
+      "onnx_int8_test_n32": {
+        "all_finite": true,
+        "shape": [
+          32,
+          5
+        ],
+        "scaled_space": {
+          "max_abs_diff": 0.08633118867874146,
+          "mean_abs_diff": 0.025328148156404495,
+          "rmse_diff": 0.03208417072892189,
+          "relative_l2_diff": 0.0453517884016037,
+          "relative_mean_diff": 0.1364651620388031
+        },
+        "original_units": {
+          "NDWI": {
+            "max_abs_diff": 0.016597211360931396,
+            "mean_abs_diff": 0.009880991652607918,
+            "rmse_diff": 0.010662931017577648
+          },
+          "NDCI": {
+            "max_abs_diff": 0.006961390376091003,
+            "mean_abs_diff": 0.0030344328843057156,
+            "rmse_diff": 0.00350487744435668
+          },
+          "NDTI": {
+            "max_abs_diff": 0.004761353135108948,
+            "mean_abs_diff": 0.0012687321286648512,
+            "rmse_diff": 0.0015985395293682814
+          },
+          "Chla": {
+            "max_abs_diff": 3.8723526000976562,
+            "mean_abs_diff": 1.4039206504821777,
+            "rmse_diff": 1.5854613780975342
+          },
+          "TSS": {
+            "max_abs_diff": 0.72784423828125,
+            "mean_abs_diff": 0.35285651683807373,
+            "rmse_diff": 0.42268916964530945
+          }
+        }
+      },
+      "onnx_int8_all_n112": {
+        "all_finite": true,
+        "shape": [
+          112,
+          5
+        ],
+        "scaled_space": {
+          "max_abs_diff": 0.6961227059364319,
+          "mean_abs_diff": 0.12946702539920807,
+          "rmse_diff": 0.17059899866580963,
+          "relative_l2_diff": 0.22517085075378418,
+          "relative_mean_diff": 0.8182730674743652
+        },
+        "original_units": {
+          "NDWI": {
+            "max_abs_diff": 0.1325674057006836,
+            "mean_abs_diff": 0.038075726479291916,
+            "rmse_diff": 0.0449354462325573
+          },
+          "NDCI": {
+            "max_abs_diff": 0.03667297959327698,
+            "mean_abs_diff": 0.007033031899482012,
+            "rmse_diff": 0.009199351072311401
+          },
+          "NDTI": {
+            "max_abs_diff": 0.06813688576221466,
+            "mean_abs_diff": 0.01719403825700283,
+            "rmse_diff": 0.02111693285405636
+          },
+          "Chla": {
+            "max_abs_diff": 28.931747436523438,
+            "mean_abs_diff": 9.03577709197998,
+            "rmse_diff": 12.409183502197266
+          },
+          "TSS": {
+            "max_abs_diff": 7.193281173706055,
+            "mean_abs_diff": 2.805102825164795,
+            "rmse_diff": 3.264803886413574
+          }
+        }
+      }
+    },
+    "operator_analysis": {
+      "fp32_graph_op_counts": {
+        "Shape": 2,
+        "Reshape": 4,
+        "Conv": 3,
+        "Relu": 4,
+        "MaxPool": 2,
+        "ReduceMean": 1,
+        "Gemm": 2,
+        "Concat": 2,
+        "Expand": 1,
+        "Transpose": 3,
+        "Slice": 5,
+        "LSTM": 1,
+        "Mul": 1,
+        "Gather": 1
+      },
+      "int8_graph_op_counts": {
+        "Reshape": 7,
+        "Shape": 2,
+        "Concat": 2,
+        "DynamicQuantizeLinear": 5,
+        "Expand": 1,
+        "Mul": 11,
+        "ConvInteger": 3,
+        "Slice": 5,
+        "Cast": 5,
+        "Add": 5,
+        "Relu": 4,
+        "MaxPool": 2,
+        "ReduceMean": 1,
+        "MatMulInteger": 2,
+        "Transpose": 2,
+        "DynamicQuantizeLSTM": 1,
+        "Gather": 2
+      },
+      "quantized_operators": [
+        "Conv -> ConvInteger (3 Conv2d layers)",
+        "Gemm -> MatMulInteger (2 Linear layers: spatial_proj.1, head.1)",
+        "LSTM -> DynamicQuantizeLSTM (1 LSTM layer)",
+        "Activation dynamic quantization helpers: DynamicQuantizeLinear, Cast, Mul, Add"
+      ],
+      "fp32_remaining_operators": [
+        "Relu (4 nodes)",
+        "MaxPool (2 nodes)",
+        "ReduceMean (1 node)",
+        "Tensor/shape ops: Shape, Slice, Gather, Concat, Expand, Reshape, Transpose"
+      ],
+      "lstm_quantization_status": "Quantized to DynamicQuantizeLSTM in ONNX Runtime 1.32.0"
+    },
+    "deployment_recommendation": {
+      "selected_model": "models/cnn_lstm_fp32.onnx",
+      "rationale": "ONNX FP32 matches PyTorch FP32 to machine precision (max_abs_diff <= 5.4e-7 in scaled space), achieves the lowest latency on CPU, and occupies only ~0.13 MB. Dynamic QInt8 quantization reduces file size to ~0.034 MB and quantizes Conv, Linear, and LSTM ops, but dynamic activation quantization overhead slows CPU inference on this compact 25,029-parameter network and introduces up to 0.696 scaled / 28.93 mg/m^3 Chla drift."
+    }
+  },
+  "limitations": [
+    "No laboratory-confirmed Chla/TSS measurements exist for the 4 Indian Sentinel-2 lakes; Chla and TSS targets are Day 2 RF proxy estimates (Case 2 teacher-student experiment).",
+    "Small dataset size (112 total temporal sequences: 60 train, 20 val, 32 test) limits deep spatio-temporal generalization.",
+    "Irregular inter-observation intervals (2 to 185 days across monsoon cloud gaps) violate fixed-step LSTM spacing assumptions.",
+    "Actual NPZ patches are (9, 64, 64) with B8A (no B08/NDWI/B07 channel), rather than (8, 32, 32).",
+    "Semi-synthetic benchmark evaluates localized simulated B04/B05 plumes only and does not prove real-world pollution detection accuracy."
+  ]
+}

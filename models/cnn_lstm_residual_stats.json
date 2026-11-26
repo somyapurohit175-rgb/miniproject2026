@@ -1,0 +1,96 @@
+{
+  "model_name": "WaterCNNLSTM",
+  "checkpoint_path": "models/cnn_lstm_best.pt",
+  "inference_model_verified": "models/cnn_lstm_fp32.onnx",
+  "source_dataset": {
+    "csv": "data/processed/sentinel_anomalies.csv",
+    "npz_dir": "data/processed/sentinel_patches/"
+  },
+  "validation_split": {
+    "target_indices": "19..23",
+    "n_observations": 20,
+    "per_lake": 5,
+    "lakes": [
+      "bellandur",
+      "hussain_sagar",
+      "yamuna_okhla",
+      "sukhna"
+    ],
+    "test_data_excluded": true,
+    "prediction_data_leakage": false
+  },
+  "standardization_method": "two_sided_z_score",
+  "two_sided": true,
+  "formula": "z_k = |residual_k - residual_mean_k| / max(residual_std_k, 1e-6); anomaly_score = max_k(z_k)",
+  "std_ddof": 0,
+  "anomaly_threshold": 2.0,
+  "anomaly_rule": "is_anomaly = (anomaly_score > 2.0)",
+  "note": "Two-sided standardized residual score fitted strictly on the 20 clean validation sequences (t=19..23).",
+  "targets": [
+    {
+      "target": "NDWI",
+      "source_column": "NDWI_med",
+      "transform": "identity",
+      "residual_definition": "actual_transformed - predicted_transformed",
+      "residual_mean": -0.029009182006120682,
+      "residual_std": 0.18122825026512146,
+      "residual_std_ddof1": 0.18593625724315643,
+      "residual_median": 0.03453053906559944,
+      "residual_mad": 0.05773719400167465,
+      "residual_min": -0.3806445896625519,
+      "residual_max": 0.242559015750885
+    },
+    {
+      "target": "NDCI",
+      "source_column": "NDCI_med",
+      "transform": "identity",
+      "residual_definition": "actual_transformed - predicted_transformed",
+      "residual_mean": 0.014274577610194683,
+      "residual_std": 0.11293342709541321,
+      "residual_std_ddof1": 0.1158672496676445,
+      "residual_median": 0.005432050675153732,
+      "residual_mad": 0.06941069662570953,
+      "residual_min": -0.1312231868505478,
+      "residual_max": 0.37986618280410767
+    },
+    {
+      "target": "NDTI",
+      "source_column": "NDTI_med",
+      "transform": "identity",
+      "residual_definition": "actual_transformed - predicted_transformed",
+      "residual_mean": -0.0005225084605626762,
+      "residual_std": 0.11426001042127609,
+      "residual_std_ddof1": 0.11722829937934875,
+      "residual_median": 0.00380724691785872,
+      "residual_mad": 0.03994813188910484,
+      "residual_min": -0.3752927780151367,
+      "residual_max": 0.16864268481731415
+    },
+    {
+      "target": "Chla",
+      "source_column": "pred_chla_proxy",
+      "transform": "log1p",
+      "residual_definition": "actual_transformed - predicted_transformed",
+      "residual_mean": 0.03530430793762207,
+      "residual_std": 0.5753585696220398,
+      "residual_std_ddof1": 0.5903054475784302,
+      "residual_median": 0.051558732986450195,
+      "residual_mad": 0.4149434566497803,
+      "residual_min": -1.3106434345245361,
+      "residual_max": 1.198859691619873
+    },
+    {
+      "target": "TSS",
+      "source_column": "pred_tss_proxy",
+      "transform": "log1p",
+      "residual_definition": "actual_transformed - predicted_transformed",
+      "residual_mean": 0.015333974733948708,
+      "residual_std": 0.9517428874969482,
+      "residual_std_ddof1": 0.9764675498008728,
+      "residual_median": -0.17016398906707764,
+      "residual_mad": 0.3376142978668213,
+      "residual_min": -1.6663026809692383,
+      "residual_max": 2.5611684322357178
+    }
+  ]
+}
